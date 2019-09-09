@@ -470,6 +470,7 @@ form {
 }
 
 .signUp input {
+	height: 100%;
 	width: 414px;
 	font-size: 1.2em;
 	padding-left: 15px;
