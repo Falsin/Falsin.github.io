@@ -10,6 +10,10 @@ article *, .ourContacts,
 	margin: 0;
 }
 
+input:active, input:focus {
+  outline: none !important; 
+}
+
 body, .icons p {
 	padding: 0;	
 }
