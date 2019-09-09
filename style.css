@@ -4,18 +4,19 @@
 	clear:	both;
 }
 
-body, .signUp input:last-child,
-article *, .ourContacts,
-.icons p {
-	margin: 0;
-}
-
 input:active, input:focus {
   outline: none !important; 
 }
 
 input::-moz-focus-inner {
   border: 0 !important;
+}
+
+
+body, .signUp input:last-child,
+article *, .ourContacts,
+.icons p {
+	margin: 0;
 }
 
 body, .icons p {
@@ -233,6 +234,7 @@ footer .container {
 
 .project {
 	flex-direction: column;
+	background-color: #efefef;
 }
 
 .project, .project div,
@@ -254,7 +256,6 @@ center button  {
 
 .projectName {
 	flex-direction: column;
-	background-color: #efefef;
 	align-items: flex-start;
 }
 
@@ -269,8 +270,8 @@ h3 {
 	margin-bottom: 20px;
 }
 
-.projectName:hover {
-	background-color: #ffe26d;
+.project:hover {
+	background-color: #ffe26d !important;
 }
 
 .project .projectName input {
