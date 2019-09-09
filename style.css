@@ -14,6 +14,10 @@ input:active, input:focus {
   outline: none !important; 
 }
 
+input::-moz-focus-inner {
+  border: 0 !important;
+}
+
 body, .icons p {
 	padding: 0;	
 }
