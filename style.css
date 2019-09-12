@@ -600,3 +600,7 @@ footer .container div {
 	text-align: center;
 	line-height: 1.7em;
 }
+
+* {
+	transition-delay: 0.1s;
+}
