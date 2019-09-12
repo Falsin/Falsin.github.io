@@ -178,7 +178,8 @@ h2 {
 .thief:hover .shadow,
 .gallery, .arrow, form,
 .yellowBackground, 
-footer .container, .icons   {
+footer .container, .icons,
+.shadow a   {
 	display: flex; 
 }
 
@@ -197,7 +198,7 @@ footer .container, .icons   {
 .field, .center, .plans div,
 .video, .darkBackground:hover,
 .area, .photo,  
-.thief:hover .shadow, .arrow,
+/*.thief:hover .shadow,*/ .arrow,
 footer .container {	
 	align-items: center;
 }
@@ -211,7 +212,7 @@ footer .container {
 .center, .video2,
 .video2 .darkBackground:hover,
 .team, .photo,
-.thief:hover .shadow, 
+/*.thief:hover .shadow, */
 .arrow, form {
 	justify-content: center;	
 }
@@ -234,12 +235,13 @@ footer .container {
 
 .project {
 	flex-direction: column;
+	background-color: #efefef;
 }
 
 .project, .project div,
 .project div img,
 .darkBackground,
-.thief:hover .shadow,
+/*.thief:hover .shadow,*/
 .frontPhoto img,
 .map, .contact,
 .map img, 
@@ -432,16 +434,22 @@ h4 {
 	display: none;
 }
 
+.shadow a {
+	width: 35px;
+	justify-content: center;
+}
+
+.shadow a:hover img {
+	filter: hue-rotate(180deg) saturate(200%);
+}
+
 .thief:hover .shadow {
 	height: 100%;
   	background: rgba(116, 88, 125, 0.8);
   	cursor: pointer;
   	border-radius: 50%;
+  	align-items: center;
   	justify-content: space-around;
-}
-
-.shadow a:hover img {
-	filter: hue-rotate(180deg) saturate(200%);
 }
 
 .gray {
