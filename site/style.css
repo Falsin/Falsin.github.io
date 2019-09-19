@@ -10,10 +10,13 @@ body {
 
 @media screen and (max-width: 900px){
     .container {
-        flex-grow: 1;
+  		width: 80%
     }
     nav div {
     	width: 60%;
+    }
+    body {
+    	font-size: 14px;
     }
 }
 
@@ -28,7 +31,6 @@ header {
 .container {
 	height: 100%;
 	display: flex;
-	width: 60%;
 	flex-direction: column;
 }
 
