@@ -23,6 +23,7 @@ header {
 }
 
 .LogoAndNav {
+	width: 100%;
 	margin-top: 4%;
 	display: flex;
 	align-items: center;
@@ -35,14 +36,12 @@ header {
 }
 
 nav {
+	justify-content: space-between;
+	width: 60%;
 	font-weight: bold;
 	display: flex;
 	margin-left: auto;
 	text-transform: uppercase;
-}
-
-nav div:not(:last-child) {
-	margin-right: 30px;
 }
 
 nav a {
@@ -57,7 +56,6 @@ nav a:hover {
 .contentHeadline {
 	margin-top: 11%;
 	width: 75%;
-	/*border: solid red 1px;*/
 }
 
 h1 {
@@ -90,11 +88,11 @@ h1 {
 }
 
 input:active, input:focus {
-  outline: none !important; 
+  	outline: none !important; 
 }
 
 input::-moz-focus-inner {
-  border: 0 !important;
+  	border: 0 !important;
 }
 
 .points {
