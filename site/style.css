@@ -4,16 +4,21 @@
 }
 
 body {
-	font-size: 2vh;
+	font-size: 16px;
 	font-family: Arial, sans-serif;
 }
 
-@media (max-width: 400px) {
-body { font-size: 1h; }
-.container {width: 100%; }
+@media screen and (max-width: 900px){
+    .container {
+        flex-grow: 1;
+    }
+    nav div {
+    	width: 60%;
+    }
 }
 
 header {
+	width: 100%;
 	background: url(./img/Image.png) no-repeat center top / cover;
 	display: flex;
 	justify-content: center;
@@ -21,6 +26,7 @@ header {
 }
 
 .container {
+	border: solid red 1px;
 	height: 100%;
 	display: flex;
 	width: 60%;
@@ -41,12 +47,17 @@ header {
 }
 
 nav {
+	border: red 1px solid;
 	justify-content: space-between;
-	width: 60%;
+	/*width: 70%;*/
 	font-weight: bold;
 	display: flex;
 	margin-left: auto;
 	text-transform: uppercase;
+}
+
+nav div {
+	margin-left: 1vw;
 }
 
 nav a {
