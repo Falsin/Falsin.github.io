@@ -26,7 +26,6 @@ header {
 }
 
 .container {
-	border: solid red 1px;
 	height: 100%;
 	display: flex;
 	width: 60%;
@@ -47,9 +46,7 @@ header {
 }
 
 nav {
-	border: red 1px solid;
 	justify-content: space-between;
-	/*width: 70%;*/
 	font-weight: bold;
 	display: flex;
 	margin-left: auto;
