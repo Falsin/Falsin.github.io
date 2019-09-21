@@ -50,7 +50,7 @@ nav a {
 
 @media screen and (max-width: 650px){
     .container {
-  	width: 80%;
+  	width: 95%;
     }
     body {
     	font-size: 14px;
@@ -62,12 +62,12 @@ nav a {
     	font-size: 12px;
     }
 }
-
+/*
 @media screen and (max-width: 500px){
     .container {
   		width: 95%;
     }
-}
+}*/
 
 @media screen and (min-width: 700px){
     header {
