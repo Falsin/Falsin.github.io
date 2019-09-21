@@ -64,8 +64,8 @@ nav a {
 }
 
 @media screen and (max-width: 500px){
-	.container {
-  		width: 100%;
+    .container {
+  		width: 95%;
     }
 }
 
