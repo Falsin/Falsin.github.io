@@ -17,6 +17,7 @@ header {
 
 .container {
 	width: 70%;
+	border: solid red 1px; 
 }
 
 .LogoAndNav {
