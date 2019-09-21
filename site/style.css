@@ -18,14 +18,12 @@ header {
 .container {
 	width: 70%;
 	display: flex;
-	border: 1px solid red;
 	flex-direction: column;
 }
 
 .LogoAndNav {
 	margin-top: 3%;
 	align-items: center;
-	border: 1px solid red;
 	display: flex;
 }
 
