@@ -13,7 +13,6 @@ header {
 	justify-content: center;
 	background: url(./img/Image.png) no-repeat center top / cover;
 	color: white;
-	border: solid red 1px;
 }
 
 .container {
