@@ -197,7 +197,7 @@ h3 {
 
 @media screen and (max-width: 500px){
 	.container {
-  		width: 100%;
+  		width: 90%;
     }
 	.field {
 		width: 30%;
