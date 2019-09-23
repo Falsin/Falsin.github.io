@@ -128,13 +128,13 @@ h3 {
 .aboutUmbrella {
 	display: flex;
 	align-items: center;
+	margin-bottom: 3vh;
 }
 
 .umbrella {
 	margin-left: auto;
 	width: 20%;
 	height: auto;
-	margin-bottom: 3vh;
 }
 
 .fields {
@@ -194,6 +194,9 @@ h3 {
     	width: 60px;
     	height: 60px;
     }
+    .umbrella {
+		width: 30%;
+	}
 }
 
 @media screen and (max-width: 500px){
