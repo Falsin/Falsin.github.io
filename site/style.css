@@ -48,33 +48,6 @@ nav a {
 	text-decoration: none;
 }
 
-@media screen and (max-width: 700px){
-    .container {
-  	width: 95%;
-    }
-    body {
-    	font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 400px){
-    body {
-    	font-size: 12px;
-    }
-}
-/*
-@media screen and (max-width: 500px){
-    .container {
-  		width: 95%;
-    }
-}*/
-
-@media screen and (min-width: 700px){
-    header {
-        height: 100vh;
-    }
-}
-
 nav a:hover {
 	color: #dec96b; 
 }
@@ -121,4 +94,119 @@ input::-moz-focus-inner {
 	padding-top: 2%;
 	margin-top: auto;
 	margin-bottom: 2%;
+}
+
+.general {
+	display: flex;
+	justify-content: center;
+}
+
+h2 {
+	font-size: 2em;
+	margin-top: 3%;
+	text-align: center;
+}
+
+.about {
+	width: 60%;
+	display: flex;
+	align-items: center;
+	color: #575758;
+}
+
+h3 {
+	font-size: 1.5em;
+	text-transform: uppercase;
+	font-weight: normal;	
+}
+
+.aboutUmbrella {
+	display: flex;
+	align-items: center;
+}
+
+.umbrella {
+	margin-left: auto;
+	width: 20%;
+	height: auto;
+	margin-bottom: 3vh;
+}
+
+.fields {
+	display: flex;
+	justify-content: space-between;
+}
+
+.field {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.center img {
+	width: 45%;
+}
+
+.center {
+	margin-top: 10%;
+	margin-bottom: 2vh;
+	width: 80px;
+	height: 80px;
+	align-items: center;
+	justify-content: center;
+	background-color: #62497c;
+	display: flex;
+	border-radius: 50%;
+}
+
+.fieldHeadline {
+	margin-bottom: 2vh;
+}
+
+.field {
+	width: 20%;
+}
+
+.field div:last-of-type {
+	margin-top: auto;
+	text-align: center;
+	margin-bottom: 2vh;
+}
+
+.field input {
+	padding: 4% 5% 4% 5%;
+}
+
+@media screen and (max-width: 650px){
+    .container {
+  		width: 80%;
+    }
+    body {
+    	font-size: 12px;
+    }
+    .center {
+    	width: 60px;
+    	height: 60px;
+    }
+}
+
+@media screen and (max-width: 500px){
+	.container {
+  		width: 100%;
+    }
+	.field {
+		width: 30%;
+	}
+}
+
+@media screen and (max-width: 350px){
+	body {
+    	font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 700px){
+    .container {
+        height: 100vh;
+    }
 }
