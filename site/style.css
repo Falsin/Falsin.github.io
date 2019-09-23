@@ -71,13 +71,17 @@ h1 {
 }
 .LearnMore {
 	padding: 2% 3% 2% 3%;
+}
+
+.button {
+	background: #ffe26d;
 	border-radius: 5%;
 	border: none;
 	text-transform: uppercase;
 	font-weight: bold;
 }
 
-.buttons input:hover {
+.button:hover {
 	background: #62497c;
 	color: white;
 }
