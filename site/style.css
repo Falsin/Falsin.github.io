@@ -106,6 +106,7 @@ input::-moz-focus-inner {
 }
 
 h2 {
+	margin-bottom: 3%;
 	font-size: 2em;
 	margin-top: 3%;
 	text-align: center;
