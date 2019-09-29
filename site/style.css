@@ -260,6 +260,10 @@ h3 {
 	color: white;
 }
 
+.pricing {
+	margin-bottom: 4vh;
+}
+
 .pricingTables {
 	display: flex;
 }
@@ -305,7 +309,7 @@ h4 {
 .table input {
 	width: 40%;
 	padding: 4% 5% 4% 5%;	
-	margin-bottom: 4vh;
+	/*margin-bottom: 4vh;*/
 }
 
 .pricing .container {
