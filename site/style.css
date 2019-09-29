@@ -78,6 +78,7 @@ h1 {
 }
 
 .button {
+	font-size: 1em;
 	background: #ffe26d;
 	border-radius: 5%;
 	border: none;
