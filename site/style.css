@@ -28,13 +28,17 @@ header {
 }
 
 .LogoAndNav img {
+	margin-right: 5%;
 	width: 13%;
 	height: auto;
 }
 
 nav {
+	width: 60%;
 	margin-left: auto;
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 nav div {
@@ -81,6 +85,10 @@ h1 {
 	font-weight: bold;
 }
 
+.extraStyle {
+	padding: 4% 5% 4% 5%;
+}	
+
 .button:hover {
 	background: #62497c;
 	color: white;
@@ -120,6 +128,7 @@ h2 {
 }
 
 h3 {
+	text-align: center;
 	font-size: 1.5em;
 	text-transform: uppercase;
 	font-weight: normal;	
@@ -179,9 +188,128 @@ h3 {
 }
 
 .field input {
-	padding: 4% 5% 4% 5%;
 	margin-bottom: 2vh;
 }
+
+.moreThanContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.projectTables {
+	display: flex;
+}
+
+.project {
+	max-width: 25%;
+	background: #e4e4e4;
+}
+
+.img {
+	padding-top: 150%;
+}
+
+.img-1 {
+	background: url(./img/Project1.png) no-repeat center top / cover;
+}
+
+.img-2 {
+	background: url(./img/Project2.png) no-repeat center top / cover;
+}
+
+.img-3 {
+	background: url(./img/Project3.png) no-repeat center top / cover;
+}
+
+.img-4 {
+	background: url(./img/Project4.png) no-repeat center top / cover;
+}
+
+.contentProject {
+	margin-right: auto;
+	margin-left: auto;
+	width: 80%;
+	flex-direction: column;
+	display: flex;
+	margin-top: 5vh;
+}
+
+.contentProject p {
+	margin-top: 3vh;
+	margin-bottom: 3vh;
+}
+
+.text {
+	padding-right: 10%;
+}
+
+.contentProject input {
+	background: white;
+	width: 80%;
+	margin-bottom: 3vh;
+	white-space: normal; 
+}
+
+.project:hover  {
+	background: #ffe26d;
+}
+
+.project:hover  input{
+	background: #62497c;
+	color: white;
+}
+
+.pricingTables {
+	display: flex;
+}
+
+.table {
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.fixMargin {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+h4 {
+	text-align: center;
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+.table h4:last-of-type {
+	color: #9d9d9d;
+}
+
+.table > * {
+	margin-top: 2vh;
+}
+
+.table p {
+	text-align: center;
+}
+
+.table-2 {
+	margin-left: auto;	
+} 
+
+.table-3 {
+	margin-left: auto;
+}
+
+.table input {
+	width: 40%;
+	padding: 4% 5% 4% 5%;	
+	margin-bottom: 4vh;
+}
+
+.pricing .container {
+	height: 0;
+} 
 
 @media screen and (max-width: 700px){
     .container {
