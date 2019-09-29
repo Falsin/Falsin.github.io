@@ -1,5 +1,5 @@
 * {
-	/*border: solid red 1px;*/
+	border: solid red 1px;
 	margin: 0;
 	padding: 0;
 }
@@ -250,6 +250,7 @@ h3 {
 	width: 80%;
 	margin-bottom: 3vh;
 	white-space: normal; 
+	height: auto;
 }
 
 .project:hover  {
@@ -309,7 +310,6 @@ h4 {
 .table input {
 	width: 40%;
 	padding: 4% 5% 4% 5%;
-	height: auto;
 }
 
 .pricing .container {
