@@ -476,6 +476,16 @@ h4 {
 	display: flex;
 }
 
+.facebook {
+	display: flex;
+	width: 25%;
+	justify-content: center;
+}
+
+.facebook a {
+	width: 40%;
+}
+
 .row a img {
 	max-width: 100%;
 	max-height: 100%;
