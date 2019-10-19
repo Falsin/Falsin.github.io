@@ -398,6 +398,97 @@ h4 {
 	margin-left: auto;
 }
 
+
+.team {
+	display: flex;
+	justify-content: safe center;
+	flex-wrap: wrap
+}
+
+.area {
+	padding-top: 1vw;
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	align-items: center;
+}
+
+.area .avatar,
+.area .name,
+.area .position {
+	margin-top: 1vw;
+}
+
+.avatar1 {
+	background: url(./img/team1.png) no-repeat center top / cover;
+}
+
+.avatar2 {
+	background: url(./img/team2.png) no-repeat center top / cover;
+}
+
+.avatar3 {
+	background: url(./img/team3.png) no-repeat center top / cover;
+}
+
+.avatar4 {
+	background: url(./img/team4.png) no-repeat center top / cover;
+}
+
+.avatar5 {
+	background: url(./img/team5.png) no-repeat center top / cover;
+}
+
+.avatar {
+	width: 12vw;
+	height: 12vw;
+}
+
+.shadow {
+	display: none;
+}
+
+.avatar:hover .shadow {
+	cursor: pointer;
+	border-radius: 50%;
+	background: rgba(107, 88, 130, .7);
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	display: flex;
+}
+
+.shadow a:hover img {
+	filter: hue-rotate(180deg) saturate(200%);
+}
+
+.row {
+	justify-content: space-around;
+	display: flex;
+	width: 100%;
+	max-height: 25%;
+}
+
+.row a {
+	justify-content: center;
+	width: 25%;
+	display: flex;
+}
+
+.row a img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.area .name {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.area .position {
+	color: #9d9d9d;
+}
+
 * {
 	transition-delay: 0.1s;
 }
