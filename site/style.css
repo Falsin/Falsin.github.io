@@ -115,7 +115,7 @@ input::-moz-focus-inner {
 .general {
 	display: flex;
 	justify-content: center;
-	padding-bottom: 2vw;
+	/*padding-bottom: 2vw;*/
 }
 
 h2 {
