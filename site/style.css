@@ -500,6 +500,102 @@ h4 {
 	color: #9d9d9d;
 }
 
+.slider {
+	padding-bottom: 3vw;
+}
+
+.slider input {
+	display: none;
+}
+
+.slides {
+	justify-content: center;
+	display: flex;
+}
+
+.sliders-controls {
+	margin-top: 2vw;
+	display: flex;
+	justify-content: space-around;
+}
+
+label[for="but-1"] {
+	background: url("./img/galleryImage1.png") no-repeat center;
+}
+
+label[for="but-2"] {
+	background: url("./img/galleryImage2.png") no-repeat center;
+}
+
+label[for="but-3"] {
+	background: url("./img/galleryImage3.png") no-repeat center;
+}
+
+label[for="but-4"] {
+	background: url("./img/galleryImage4.png") no-repeat center;
+}
+
+label[for="but-5"] {
+	background: url("./img/galleryImage5.png") no-repeat center;
+}
+
+.sliders-controls label {
+	display: inline-block;
+	width: 10vw;
+	height: 6vw;
+	cursor: pointer;
+	background-size: cover; 
+}
+
+.slider img {
+	display: none;
+}
+
+#but-1:checked ~ .sliders-controls label[for="but-1"],
+#but-2:checked ~ .sliders-controls label[for="but-2"],
+#but-3:checked ~ .sliders-controls label[for="but-3"],
+#but-4:checked ~ .sliders-controls label[for="but-4"],
+#but-5:checked ~ .sliders-controls label[for="but-5"] {
+	filter: drop-shadow(0 0 1vw yellow)
+			drop-shadow(0 0 0.3vw #2F4F4F);
+}
+
+#but-1:checked ~ .slides .firstPhoto,
+#but-2:checked ~ .slides .secondPhoto,
+#but-3:checked ~ .slides .thirdPhoto,
+#but-4:checked ~ .slides .forthPhoto,
+#but-5:checked ~ .slides .fifthPhoto {
+	display: flex;
+	height: 28vw;
+}
+
+.sliders-controls a {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	width: 2.4vw;
+	background: #2a2a2a;
+}
+
+.sliders-controls a::after {
+	color: white;
+	content: "";
+	width: 0.5vw;
+	height: 0.5vw;
+	border-style: white transparent transparent white;
+	border-width: 0.3vw 0 0 0.3vw;
+	border-style: solid;
+	transform: rotate(-45deg);
+}
+
+.sliders-controls .arrowLeft::after {
+	transform: rotate(135deg);
+}
+
+.sliders-controls a:hover {
+	background: #62497c;
+}
+
 * {
 	transition-delay: 0.1s;
 }
