@@ -500,6 +500,7 @@ h4 {
 	color: #9d9d9d;
 }
 
+
 .slider {
 	padding-bottom: 3vw;
 }
@@ -519,28 +520,30 @@ h4 {
 	justify-content: space-around;
 }
 
+
 label[for="but-1"] {
-	background: url("./img/galleryImage1.png") no-repeat center;
+	background-image: url(img/galleryImage1.png);
 }
 
 label[for="but-2"] {
-	background: url("./img/galleryImage2.png") no-repeat center;
+	background-image: url(img/galleryImage2.png);
 }
 
 label[for="but-3"] {
-	background: url("./img/galleryImage3.png") no-repeat center;
+	background-image: url(img/galleryImage3.png);
 }
 
 label[for="but-4"] {
-	background: url("./img/galleryImage4.png") no-repeat center;
+	background-image: url(img/galleryImage4.png);
 }
 
 label[for="but-5"] {
-	background: url("./img/galleryImage5.png") no-repeat center;
+	background-image: url(img/galleryImage5.png);
 }
 
 .sliders-controls label {
 	display: inline-block;
+	box-sizing: border-box;
 	width: 10vw;
 	height: 6vw;
 	cursor: pointer;
@@ -556,8 +559,7 @@ label[for="but-5"] {
 #but-3:checked ~ .sliders-controls label[for="but-3"],
 #but-4:checked ~ .sliders-controls label[for="but-4"],
 #but-5:checked ~ .sliders-controls label[for="but-5"] {
-	filter: drop-shadow(0 0 1vw yellow)
-			drop-shadow(0 0 0.3vw #2F4F4F);
+	box-shadow: 0 0 1vw 0.5vw rgba(255, 255, 5, 1);
 }
 
 #but-1:checked ~ .slides .firstPhoto,
