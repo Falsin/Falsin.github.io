@@ -648,6 +648,7 @@ label[for="but-5"] {
 	text-transform: uppercase;
 	padding: 0.5vw 1vw 0.5vw 1vw;
 	border: none;
+	background: #d3d1d1;
 }
 
 input[type="submit"], 
@@ -692,6 +693,7 @@ button {
 	outline: none;
 	margin-right: 20%;
 	margin-left: 20%;
+	background: #d3d1d1;
 }
 
 .article button:hover {
