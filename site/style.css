@@ -651,6 +651,14 @@ label[for="but-5"] {
 	background: #d3d1d1;
 }
 
+.signup input[name="e-mail"] {
+	border-radius: 1vw 0 0 1vw;
+}
+
+.signup input[value="sing-up"] {
+	border-radius: 0 1vw 1vw 0;
+}
+
 input[type="submit"], 
 button {
 	cursor: pointer;
