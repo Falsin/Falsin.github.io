@@ -945,6 +945,9 @@ footer {
     .attributes p {
     	font-size: 0.8em;
     }
+    .contact {
+	height: auto;
+    }	
 }
 
 @media screen and (min-width: 700px){
