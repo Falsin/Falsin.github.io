@@ -320,7 +320,8 @@ h4 {
 	padding: 4% 5% 4% 5%;
 }
 
-.pricing .container {
+.pricing .container,
+footer .container {
 	height: auto;
 }
 
@@ -452,7 +453,8 @@ h4 {
 	display: none;
 }
 
-.avatar:hover .shadow {
+.avatar:hover .shadow,
+.avatar:focus .shadow { 
 	cursor: pointer;
 	border-radius: 50%;
 	background: rgba(107, 88, 130, .7);
@@ -462,7 +464,8 @@ h4 {
 	display: flex;
 }
 
-.shadow a:hover img {
+.shadow a:hover img,
+.shadow a:focus img { 
 	filter: hue-rotate(180deg) saturate(200%);
 }
 
@@ -622,13 +625,12 @@ label[for="but-5"] {
 	text-shadow: 0.15vw 0.15vw 0.3vw black;
 }
 
-
 .signup .container {
 	height: auto;
 }
 
 .signup input[name="e-mail"] {
-	border: solid 1px #a1b5c4;;
+	border: solid 1px #a1b5c4;
 	box-sizing: border-box;
 	flex-grow: 1;
 	flex-shrink: 2;
@@ -709,7 +711,7 @@ button {
 	background: #ffe26d;
 }
 
-form {
+.signupForm {
 	box-sizing: border-box;
 	margin: 2vw 0 2vw 0;
 	display: flex;
@@ -727,6 +729,181 @@ form {
 	color: #a0a0a0;
 }
 
+.contact  {
+	display: grid;
+	grid-template-columns: 15% 35% 35% 15%;
+}
+
+.contact  img {
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	grid-column-start: 1;
+	grid-column-end: 3; 
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+.formField {
+	z-index: 1;
+	background: #ffe26d;
+	grid-column-start: 3;
+	grid-column-end: 5; 
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+.feedBack {
+	padding-left: 3vw;
+	z-index: 2;
+	grid-column-start: 3;
+	grid-column-end: 4; 
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+.contact h2 {
+	margin-top: 3vw;
+	margin-bottom: 2.5vw;
+}
+
+.feedBack label {
+	display: block;
+	text-transform: uppercase;
+}
+
+.contact input {
+	display: block;
+	margin-top: 1vw;
+	margin-bottom: 1.5vw;
+	width: 100%;
+	font-size: 1.2em;
+	box-sizing: border-box;
+}
+
+.contact input {
+	padding: 1vw 1.5vw 1vw 1.5vw;
+}
+
+.contact textarea {
+	margin-top: 1vw;
+	width: 100%;
+	padding: 1vw 1.5vw 1vw 1.5vw;
+	box-sizing: border-box;
+	resize: none;
+	height: 12vw;
+}
+
+.feedBack input[type="submit"] {
+	background: #62497c;
+	color: white;
+	border: none;
+	text-transform: uppercase;
+}
+
+.feedBack input[type="text"], 
+.feedBack textarea {
+	border: solid 1px #a1b5c4;
+	box-sizing: border-box;
+}
+
+.feedBack input[type="text"]:focus, 
+.feedBack textarea:focus {
+	border: 1px solid rgb(0, 174, 255);
+}
+
+.feedBack input[type="text"]:hover, 
+.feedBack textarea:hover {
+	box-shadow: 0 0 6px rgba(0, 174, 255, .6);
+	outline: none;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+}
+
+footer {
+
+}
+
+.attributes {
+	margin-top: 2vw;
+	margin-bottom: 2vw;
+	display: flex;
+	justify-content: space-between;
+}
+
+.attributes > div {
+	min-width: 20%;
+	max-width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.attributes h4 {
+	margin-bottom: 1vw;
+	/*font-size: 0.9em;*/
+}
+
+.attributes p {
+	justify-content: center;
+	display: flex;
+	flex-grow: 1;
+}
+
+.attributes span {
+	text-align: center;
+}
+
+.follow  > div {
+	display: flex;
+	justify-content: space-around;
+	vertical-align: middle;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.icons {
+	display: flex;
+	justify-content: space-around;
+}
+
+.attributes p {
+	line-height: 1.5;
+}
+
+.icons a {
+	display: block;
+	width: 1.9vw;
+	height: 1.9vw;
+	background-size: contain;
+}
+
+.behanceIcon {
+	background: url(img/behanceIcon.png) center no-repeat;
+}
+
+.twitterIcon {
+	background: url(img/twitterIcon.png) center no-repeat;
+}
+
+.linkediinIcon {
+	background: url(img/linkediinIcon.png) center no-repeat;
+}
+
+.facebookIcon {
+	background: url(img/facebookIcon.png) center no-repeat;
+}
+
+.googleIcon {
+	background: url(img/googleIcon.png) center no-repeat;
+}
+
+.tumblrIcon {
+	background: url(img/tumblrIcon.png) center no-repeat;
+}
+
 @media screen and (max-width: 700px){
     .container {
   		width: 80%;
@@ -741,6 +918,9 @@ form {
     .umbrella {
 		width: 30%;
 	}
+	.contact {
+		grid-template-columns: 10% 40% 40% 10%;
+	}
 }
 
 @media screen and (max-width: 500px){
@@ -750,11 +930,20 @@ form {
 	.field {
 		width: 30%;
 	}
+	.contact {
+		grid-template-columns: 2.5% 47.5% 47.5% 2.5%;
+	}
 }
 
 @media screen and (max-width: 400px){
 	body {
     	font-size: 10px;
+    }
+    .attributes h4 {
+    	font-size: 0.7em;
+    }
+    .attributes p {
+    	font-size: 0.8em;
     }
 }
 
@@ -763,6 +952,9 @@ form {
         height: 100vh;
     }
     .fullHeight {
+    	height: 100vh;
+    }
+    .contact {
     	height: 100vh;
     }
 }
