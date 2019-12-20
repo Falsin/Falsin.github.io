@@ -447,14 +447,24 @@ footer .container {
 .avatar {
 	width: 12vw;
 	height: 12vw;
+	cursor: pointer;
 }
 
 .shadow {
 	display: none;
 }
 
-.avatar:hover .shadow,
-.avatar:focus .shadow { 
+.avatar:hover .shadow { 
+	cursor: pointer;
+	border-radius: 50%;
+	background: rgba(107, 88, 130, .7);
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	display: flex;
+}
+
+.avatarActive {
 	cursor: pointer;
 	border-radius: 50%;
 	background: rgba(107, 88, 130, .7);
@@ -734,10 +744,10 @@ button {
 	grid-template-columns: 15% 35% 35% 15%;
 }
 
-.contact  .imgMap {
+.contact .imgMap  {
+	background: url(./img/map.png) no-repeat center top / cover;
 	width: 100%;
 	height: 100%;
-	background: url(./img/Map.png) no-repeat center top / cover;	
 	z-index: 2;
 	grid-column-start: 1;
 	grid-column-end: 3; 
@@ -825,8 +835,8 @@ footer {
 }
 
 .attributes {
-	margin-top: 3vw;
-	margin-bottom: 3vw;
+	margin-top: 2vw;
+	margin-bottom: 2vw;
 	display: flex;
 	justify-content: space-between;
 }
@@ -898,6 +908,80 @@ footer {
 
 .tumblrIcon {
 	background: url(img/tumblrIcon.png) center no-repeat;
+}
+
+section {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: fixed;
+	background: rgba(255, 0, 0, 0.4);
+	z-index: 5;
+	box-sizing: border-box;
+}
+
+section h2 {
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+.block {
+	width: 50%;
+	height: 50%;
+	background: white;
+	display: flex;
+	flex-direction: column;
+}
+
+
+/*
+section, section * {
+	border: solid green 1px;
+}*/
+
+.active {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.blur {
+	filter: blur(5px);
+}
+
+.cancel {
+	position: absolute;
+	align-self: flex-end;
+	width: 2.5vw;
+	height: 1.5vw;
+	background: red;
+	cursor: pointer;
+}
+
+.cancel::after,
+.cancel::before {
+	content: "";
+	border: solid 1.5px white;
+	width: 0.3vw;
+	height: 0.3vw;
+	position: absolute;
+	transform-origin: 0 0;
+	left: 50%;
+	top: 50%;
+}
+
+.cancel::before {
+	transform: rotate(45deg);
+	/*transform: rotate(30deg);*/
+	border-color: white transparent transparent white;
+}
+
+.cancel::after {
+	transform: rotate(-135deg);
+	border-color: white transparent transparent white;
+	/*transform: rotate(-30deg);*/
 }
 
 @media screen and (max-width: 700px){
