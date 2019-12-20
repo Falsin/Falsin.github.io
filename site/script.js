@@ -19,7 +19,10 @@ function enumeration(value) {
 			item.addEventListener("click", function(evt) {
 				evt.preventDefault();
 				section.classList.add("active");
-				child.forEach(item => item.classList.add("blur"));
+				//child.results.forEach(item => item.classList.add("blur")); doesn't work
+				for (let m = 0; m < child.length && child[m] != section; m++) {
+					child[m].classList.add("blur");
+				}		
 			})
 		})
 	})
@@ -27,7 +30,13 @@ function enumeration(value) {
 
 cancel.addEventListener("click", function(evt) {
 	section.classList.remove("active");
-	child.forEach(item => item.classList.remove("blur"))	
+	//child.forEach(item => item.classList.remove("blur"))
+	for (let m = 0; m < child.length && child[m] != section; m++) {
+		child[m].classList.remove("blur");
+	}	
+	for (let j = 0; j < area.length; j++) {
+		shadow[j].classList.remove("avatarActive");
+	}			
 })
 
 
