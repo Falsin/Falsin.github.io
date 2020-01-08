@@ -1,0 +1,88 @@
+@border: solid red 1px;
+@backroundJustButton: #35383B;
+@backroundSpecialButton: #FF7600;
+
+.size(@width, @height) {
+	width: @width;
+	height: @height;
+}
+
+.indents(@margin, @padding) {
+	margin: @margin;
+	padding: @padding;
+}
+
+* {
+	.indents(0, 0);
+	box-sizing: border-box;
+	transition-delay: 0.1s;
+}
+
+body {
+	.size(100%, 100%);
+}
+
+html {
+	.size(100%, 100%);
+}
+
+.container {
+	.size(100%, 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.calculator {
+	background: black;
+	/*.size(25%, 70%);*/
+	display: grid;
+	/*grid-template-rows: 15% 85%;*/
+	grid-template-areas: 
+		"form"
+		"table"
+}
+
+form {
+	display: flex;
+	grid-area: form;
+	width: 100%;
+}
+
+textarea {
+	font-size: 2vw;
+	.size(100%, 100%);
+	border: none;
+	outline: none;
+	resize: none;
+	.indents(0, 0.6vw);
+	background: black;
+	color: white;
+	text-align: right;
+}
+
+table {
+	grid-area: table;
+	/*.size(100%, 100%);*/
+	border-spacing: 0.6vw;
+}
+
+td {
+	font-size: 1.5vw;
+	text-align: center;
+	background: @backroundJustButton;
+	border-radius: 50%;
+	.size(5vw, 5vw);
+	cursor: pointer;
+	color: white;
+
+	&:last-child {background: @backroundSpecialButton;}
+	&:hover {background-color: spin(lighten(@backroundJustButton, 10%), 10);}
+	&:last-child:hover {background-color:  spin(@backroundSpecialButton, 5);}
+}
+
+@media screen and (max-width: 350px){
+	.calculator {
+		.size(100%, 100%);
+	}
+}
