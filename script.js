@@ -65,22 +65,26 @@ function pressMathSymbols(arg) {
 
 function pressEqual() {
 	arrOfNumbers.push(parseFloat(textarea.textContent));
-	for (let i = 0; i < arrOfNumbers.length; i++) {
+	for (let i = 0; i < arrOfNumbers.length;) {
 		if (arrOfNumbers[i + 1] == "x") {
 			let times = arrOfNumbers[i] * arrOfNumbers[i + 2];
 			arrOfNumbers.splice(i, 3, times);
 		} else if (arrOfNumbers[i + 1] == "÷") {
 			let times = arrOfNumbers[i] / arrOfNumbers[i + 2];
 			arrOfNumbers.splice(i, 3, times);
+		} else {
+			i++;
 		}
 	}
-	for (let i = 0; i < arrOfNumbers.length; i++) {
+	for (let i = 0; i < arrOfNumbers.length;) {
 		if (arrOfNumbers[i + 1] == "+") {
 			let times = arrOfNumbers[i] + arrOfNumbers[i + 2];
 			arrOfNumbers.splice(i, 3, times);
 		} else if (arrOfNumbers[i + 1] == "-") {
 			let times = arrOfNumbers[i] - arrOfNumbers[i + 2];
 			arrOfNumbers.splice(i, 3, times);			
+		} else {
+			i++;
 		}
  	}
  	textarea.textContent = arrOfNumbers[0];
