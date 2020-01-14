@@ -1,16 +1,16 @@
 let numbers 	  = document.querySelectorAll('.number');
 let mathSymbols   = document.querySelectorAll('.mathSymbol');
+let equal         = document.querySelector('.equal');
 let delets 		  = document.querySelectorAll('.delet');
 let dot 		  = document.querySelector('#dot');
 let specialSymbol = document.querySelector('#specialSymbol');
 
 let textarea 	  = document.querySelector("textarea");
 
-let lastNumber 	  = "0";
-let isNewNumber   = false;
-let NewNumber     = "0";
 
-let globalOperation;
+let nav 		  = document.querySelectorAll('.nav');
+
+let arrOfNumbers  = [];
 
 for (let i of numbers) {
 	i.addEventListener('click', function(e) {
@@ -19,7 +19,9 @@ for (let i of numbers) {
 }
 
 for (let i of mathSymbols) {
-	i.addEventListener('click', pressMathSymbols);
+	i.addEventListener('click', function(e) {
+		pressMathSymbols(e.target.textContent);
+	});
 }
 
 for (let i of delets) {
@@ -32,55 +34,57 @@ dot.addEventListener('click', pressDot);
 
 specialSymbol.addEventListener('click', pressSpecialSymbol);
 
+equal.addEventListener('click', pressEqual);
+
+for (let i of nav) {
+	i.addEventListener('click', function(e) {
+		pressNav(e.srcElement);
+	});
+}
+
+function pressNav(arg) {
+	for (let i of nav) {
+		i.classList.remove('active');
+	}
+	arg.classList.add('active');
+}
+
 function pressNumber(arg) {
 	if (textarea.textContent == "0") {
 		textarea.textContent = arg;
-		if (isNewNumber) {
-			NewNumber = textarea.textContent;
-		} else {
-			lastNumber = textarea.textContent;
-		}
 	} else {
 		textarea.textContent += arg;
-		if (isNewNumber) {
-			NewNumber = textarea.textContent;
-		} else {
-			lastNumber = textarea.textContent;
-		}		
 	}
 }
 
-function pressMathSymbols(arg) {   
+function pressMathSymbols(arg) {
+	arrOfNumbers.push(parseFloat(textarea.textContent));
+	arrOfNumbers.push(arg); 
 	textarea.textContent = "0";
-	isNewNumber = true;
-	if (arg.target.textContent == "÷") {
-		globalOperation = "÷";
-	} else if (arg.target.textContent == "x") {
-		globalOperation = "x";
-	} else if (arg.target.textContent == "+") {
-		globalOperation = "+";
-	} else if (arg.target.textContent == "-") {
-		globalOperation = "-";
-	} else if (arg.target.textContent == "%") {
-		globalOperation = "%";
-	} else if (arg.target.textContent == "=") {
-		if (globalOperation == "÷") {
-			textarea.textContent = lastNumber / NewNumber;
-			changeNumbers()
-		} else if (globalOperation == "x") {
-			textarea.textContent = lastNumber * NewNumber;
-			changeNumbers()
-		} else if (globalOperation == "+") {
-			textarea.textContent = +lastNumber + +NewNumber;
-			changeNumbers()
-		} else if (globalOperation == "-") {
-			textarea.textContent = lastNumber - NewNumber;
-			changeNumbers()
-		} else if (globalOperation == "%") {
-			textarea.textContent = lastNumber * NewNumber / 100;
-			changeNumbers()
-		}	 	
+}
+
+function pressEqual() {
+	arrOfNumbers.push(parseFloat(textarea.textContent));
+	for (let i = 0; i < arrOfNumbers.length; i++) {
+		if (arrOfNumbers[i + 1] == "x") {
+			let times = arrOfNumbers[i] * arrOfNumbers[i + 2];
+			arrOfNumbers.splice(i, 3, times);
+		} else if (arrOfNumbers[i + 1] == "÷") {
+			let times = arrOfNumbers[i] / arrOfNumbers[i + 2];
+			arrOfNumbers.splice(i, 3, times);
+		}
 	}
+	for (let i = 0; i < arrOfNumbers.length; i++) {
+		if (arrOfNumbers[i + 1] == "+") {
+			let times = arrOfNumbers[i] + arrOfNumbers[i + 2];
+			arrOfNumbers.splice(i, 3, times);
+		} else if (arrOfNumbers[i + 1] == "-") {
+			let times = arrOfNumbers[i] - arrOfNumbers[i + 2];
+			arrOfNumbers.splice(i, 3, times);			
+		}
+ 	}
+ 	textarea.textContent = arrOfNumbers[0];
+ 	arrOfNumbers = [];
 }
 
 function pressDelets(arg) {
