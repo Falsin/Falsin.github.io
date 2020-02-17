@@ -1,3 +1,4 @@
+/*
 let numbers 	  = document.querySelectorAll('.number');
 let mathSymbols   = document.querySelectorAll('.mathSymbol');
 let equal         = document.querySelector('.equal');
@@ -121,4 +122,4 @@ function pressSpecialSymbol() {
 function changeNumbers() {
 	lastNumber = textarea.textContent;
 	NewNumber = "0";
-};
+};*/
