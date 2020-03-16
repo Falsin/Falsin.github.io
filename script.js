@@ -38,6 +38,11 @@ percent.addEventListener('mousedown', pressPercent);
 
 additiveInverse.addEventListener('mousedown', pressAdditiveInverse);
 
+function pressAdditiveInverse(arg) {
+	input.value = -1 * input.value;
+	number = -1 * number;
+}
+
 function pressNumbers(arg) {
 	if (input.value == "0" || number == "") {
 		input.value = "";
@@ -56,6 +61,8 @@ function pressOperations(arg) {
 	let result = array[array.length - 1];
 	if (!isNaN(result)) {
 		array.push(arg);
+	} else {
+		array[array.length - 1] = arg;
 	}
 	percentActive = true;
 }
@@ -86,6 +93,7 @@ function pressEquals() {
 			j+=2;
 		}
 	}
+	
 	input.value = array[0];
 	number = input.value;
 	array = [];
