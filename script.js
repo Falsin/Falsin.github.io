@@ -1,125 +1,130 @@
-/*
-let numbers 	  = document.querySelectorAll('.number');
-let mathSymbols   = document.querySelectorAll('.mathSymbol');
-let equal         = document.querySelector('.equal');
-let delets 		  = document.querySelectorAll('.delet');
-let dot 		  = document.querySelector('#dot');
-let specialSymbol = document.querySelector('#specialSymbol');
+let input 			= document.querySelector('input'); 
+let numbers 		= document.querySelectorAll('.number');
+let mathOperator 	= document.querySelectorAll('.mathOperator');
+let equals 			= document.querySelector('.grid-equals');
+let cancel 			= document.querySelector('.cancel');
+let Delete 			= document.querySelector('.Delete');
+let dot 			= document.querySelector('.dot');
+let percent 		= document.querySelector('.percent');
+let additiveInverse = document.querySelector('.additiveInverse');
 
-let textarea 	  = document.querySelector("textarea");
+let array 	= [];
+let number 	= "";
+let percentActive = true;
 
-
-let nav 		  = document.querySelectorAll('.nav');
-
-let arrOfNumbers  = [];
 
 for (let i of numbers) {
-	i.addEventListener('click', function(e) {
-		pressNumber(e.target.textContent);
+	i.addEventListener("mousedown", function (e) { 
+		// данный код начинает выполняться после того как произошло событие
+		pressNumbers(e.target.textContent)
 	});
 }
 
-for (let i of mathSymbols) {
-	i.addEventListener('click', function(e) {
-		pressMathSymbols(e.target.textContent);
+for (let i of mathOperator) {
+	i.addEventListener('mousedown', function(e) {
+		pressOperations(e.target.textContent);
 	});
 }
 
-for (let i of delets) {
-	i.addEventListener('click', function(e) {
-		pressDelets(e.target.textContent);
-	});
+equals.addEventListener('mousedown', pressEquals);
+
+cancel.addEventListener('mousedown', pressCancel);
+
+Delete.addEventListener('mousedown', pressDelete);
+
+dot.addEventListener('mousedown', pressDot);
+
+percent.addEventListener('mousedown', pressPercent);
+
+additiveInverse.addEventListener('mousedown', pressAdditiveInverse);
+
+function pressNumbers(arg) {
+	if (input.value == "0" || number == "") {
+		input.value = "";
+	} 	
+	if (input.value.length < 13) {
+		input.value += arg;
+		number = input.value;
+	}	
 }
 
-dot.addEventListener('click', pressDot);
-
-specialSymbol.addEventListener('click', pressSpecialSymbol);
-
-equal.addEventListener('click', pressEqual);
-
-for (let i of nav) {
-	i.addEventListener('click', function(e) {
-		pressNav(e.srcElement);
-	});
-}
-
-function pressNav(arg) {
-	for (let i of nav) {
-		i.classList.remove('active');
+function pressOperations(arg) {
+	if (!(number == "")) {
+		array.push(number);
 	}
-	arg.classList.add('active');
-}
-
-function pressNumber(arg) {
-	if (textarea.textContent == "0") {
-		textarea.textContent = arg;
-	} else {
-		textarea.textContent += arg;
+	number = "";
+	let result = array[array.length - 1];
+	if (!isNaN(result)) {
+		array.push(arg);
 	}
+	percentActive = true;
 }
 
-function pressMathSymbols(arg) {
-	arrOfNumbers.push(parseFloat(textarea.textContent));
-	arrOfNumbers.push(arg); 
-	textarea.textContent = "0";
-}
-
-function pressEqual() {
-	arrOfNumbers.push(parseFloat(textarea.textContent));
-	for (let i = 0; i < arrOfNumbers.length;) {
-		if (arrOfNumbers[i + 1] == "x") {
-			let times = arrOfNumbers[i] * arrOfNumbers[i + 2];
-			arrOfNumbers.splice(i, 3, times);
-		} else if (arrOfNumbers[i + 1] == "÷") {
-			let times = arrOfNumbers[i] / arrOfNumbers[i + 2];
-			arrOfNumbers.splice(i, 3, times);
+function pressEquals() {
+	array.push(number);
+	let count;
+	for (let i = 0; i < array.length - 1;) {
+		if (array[i + 1] == "×") {
+			count = array[i] * array[i + 2];
+			array.splice(i, 3, count);
+		} else if (array[i + 1] == "÷") {
+			count = array[i] / array[i + 2];
+			array.splice(i, 3, count);
 		} else {
-			i++;
+			i+=2;
 		}
 	}
-	for (let i = 0; i < arrOfNumbers.length;) {
-		if (arrOfNumbers[i + 1] == "+") {
-			let times = arrOfNumbers[i] + arrOfNumbers[i + 2];
-			arrOfNumbers.splice(i, 3, times);
-		} else if (arrOfNumbers[i + 1] == "-") {
-			let times = arrOfNumbers[i] - arrOfNumbers[i + 2];
-			arrOfNumbers.splice(i, 3, times);			
-		} else {
-			i++;
+	for (let j = 0; j < array.length - 1;) {
+		if (array[j + 1] == "+") {
+			count = +array[j] + +array[j + 2];
+			array.splice(j, 3, count);
+		} else if (array[j + 1] == "−") {
+			count = array[j] - array[j + 2];
+			array.splice(j, 3, count);			
 		}
- 	}
- 	textarea.textContent = arrOfNumbers[0];
- 	arrOfNumbers = [];
+		else {
+			j+=2;
+		}
+	}
+	input.value = array[0];
+	number = input.value;
+	array = [];
 }
 
-function pressDelets(arg) {
-	if (arg == "C") {
-		textarea.textContent = "0";
-		lastNumber = "0";
-		NewNumber = "0";
-		isNewNumber = false;
-	} else {
-		let answer = textarea.textContent.split("");
-		textarea.textContent = answer.slice(0, answer.length - 1).join("");		
+function pressCancel() {
+	return input.value = "0";
+}
+
+function pressDelete() {
+	input.value = input.value.slice(0, -1);
+	if (input.value.length < 1) {
+		input.value = "0";
 	}
 }
 
 function pressDot() {
-	if (!textarea.textContent.includes(".")) {
-		textarea.textContent += ".";
+	let string = input.value;
+	if (string.length < 13 && !string.includes('.')) {
+		input.value += ".";
 	}
 }
 
-function pressSpecialSymbol() {
-	textarea.textContent *= (-1);
-	if (isNewNumber) {
-		NewNumber = textarea.textContent;
-	} else {
-		lastNumber = textarea.textContent;
-	}		
+function pressPercent(arg) {
+	if (percentActive) {
+		let value = input.value / 100;
+		if (array[array.length - 1] == "×") {
+			number = value;
+			input.value = value;
+		} else if (array[array.length - 1] == "÷") {
+			number = value;
+			input.value = value;
+		} else if (array[array.length - 1] == "+") {
+			number = array[array.length - 2] * value;
+			input.value = number;
+		} else {
+			number = array[array.length - 2] * value;
+			input.value = number;			
+		}
+	}
+	percentActive = false;
 }
-
-function changeNumbers() {
-	lastNumber = textarea.textContent;
-	NewNumber = "0";
-};*/
