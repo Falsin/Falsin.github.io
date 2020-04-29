@@ -9,39 +9,104 @@
  		<meta name="viewport" content="width=device-width, initial-scale=1">		
 	</head>
 	<body>
-		<div class="container">
-			<nav>navigation bar</nav>
-			<div class="calculator">
+		<div id ="container" class="standartContainer">
+			<nav>
+				<div class="active nav">Standart</div>
+				<div class="nav">Extended</div>
+				<div class="nav">Number system converter</div>
+				<div class="nav">Converter</div>
+			</nav>
+
+			<div class="standart activeCalc calculator">
 				<form name="form">
 					<input value="0" readonly></input>
 				</form>
-				<div class="grid">
-					<div class="service grid-cancel cancel"><span>C</span></div>
-					<div class="service grid-delete Delete"><span><</span></div>
-					<div class="service grid-percent percent"><span>%</span></div>
-					<div class="mathOperator grid-divide"><span>÷</span></div>
+				<div class="fix">
+					<div class="grid">
+						<div class="service grid-cancel cancel"><span>C</span></div>
+						<div class="service grid-delete Delete"><span><</span></div>
+						<div class="service grid-percent percent"><span>%</span></div>
+						<div class="mathOperator grid-divide"><span>÷</span></div>
 
-					<div class="number grid-seven"><span>7</span></div>
-					<div class="number grid-eight"><span>8</span></div>
-					<div class="number grid-nine"><span>9</span></div>
-					<div class="mathOperator grid-times"><span>×</span></div>
+						<div class="number grid-seven"><span>7</span></div>
+						<div class="number grid-eight"><span>8</span></div>
+						<div class="number grid-nine"><span>9</span></div>
+						<div class="mathOperator grid-times"><span>×</span></div>
 
-					<div class="number grid-four"><span>4</span></div>
-					<div class="number grid-five"><span>5</span></div>
-					<div class="number grid-six"><span>6</span></div>
-					<div class="mathOperator grid-minus"><span>−</span></div>
+						<div class="number grid-four"><span>4</span></div>
+						<div class="number grid-five"><span>5</span></div>
+						<div class="number grid-six"><span>6</span></div>
+						<div class="mathOperator grid-minus"><span>−</span></div>
 
-					<div class="number grid-one"><span>1</span></div>
-					<div class="number grid-two"><span>2</span></div>
-					<div class="number grid-three"><span>3</span></div>
-					<div class="mathOperator grid-plus"><span>+</span></div>
+						<div class="number grid-one"><span>1</span></div>
+						<div class="number grid-two"><span>2</span></div>
+						<div class="number grid-three"><span>3</span></div>
+						<div class="mathOperator grid-plus"><span>+</span></div>
 
-					<div class="grid-additiveInverse additiveInverse"><span>+/-</span></div>
-					<div class="number grid-zero"><span>0</span></div>
-					<div class="grid-dot dot"><span>.</span></div>
-					<div class="grid-equals"><span>=</span></div>
+						<div class="grid-additiveInverse additiveInverse"><span>+/-</span></div>
+						<div class="number grid-zero"><span>0</span></div>
+						<div class="grid-dot dot"><span>.</span></div>
+						<div class="grid-equals"><span>=</span></div>
+					</div>
 				</div>
 			</div>
+
+			<div class="extended calculator">
+				<form name="form">
+					<input value="0" readonly></input>
+				</form>
+				<div class="fix">
+					<div class="grid">
+						<div class="grid-fraction fraction"><span>1/x</span></div>
+						<div class="grid-powerDec powerDec"><span>10<sup>x</sup></span></div>							
+						<div class="grid-squared squared"><span>x<sup>2<sup></span></div>
+						<div class="service grid-cancel cancel"><span>C</span></div>
+						<div class="service grid-delete Delete"><span><</span></div>
+						<div class="service grid-percent percent"><span>%</span></div>
+						<div class="mathOperator grid-divide"><span>÷</span></div>
+
+					
+						<div class="grid-root root"><span>√x</span></div>
+						<div class="grid-cubed cubed"><span>x<sup>3<sup></span></div>
+						<div class="grid-cubicRoot cubicRoot"><span>∛x</span></div>
+						<div class="number grid-seven"><span>7</span></div>
+						<div class="number grid-eight"><span>8</span></div>
+						<div class="number grid-nine"><span>9</span></div>
+						<div class="mathOperator grid-times"><span>×</span></div>
+
+				
+						<div class="grid-power power"><span>x<sup>n<sup></span></div>
+						<div class="grid-natLog natLog"><span>ln</span></div>
+						<div class="grid-decLog decLog"><span>log<sub>10</sub></span></div>
+						<div class="number grid-four"><span>4</span></div>
+						<div class="number grid-five"><span>5</span></div>
+						<div class="number grid-six"><span>6</span></div>
+						<div class="mathOperator grid-minus"><span>−</span></div>
+
+
+						<div class="grid-factorial factorial"><span>n!</span></div>
+						<div class="grid-sin sin"><span>sin</span></div>
+						<div class="grid-cos cos"><span>cos</span></div>
+						<div class="number grid-one"><span>1</span></div>
+						<div class="number grid-two"><span>2</span></div>
+						<div class="number grid-three"><span>3</span></div>
+						<div class="mathOperator grid-plus"><span>+</span></div>
+
+						
+						<div class="grid-tan tan"><span>tan</span></div>
+						<div class="grid-e e"><span>e</span></div>
+						<div class="grid-PI PI"><span>π</span></div>	
+						<div class="grid-additiveInverse additiveInverse"><span>+/-</span></div>
+						<div class="number grid-zero"><span>0</span></div>
+						<div class="grid-dot dot"><span>.</span></div>
+						<div class="grid-equals"><span>=</span></div>
+					</div>
+				</div>				
+			</div>
+
+			<div class="systemConverter calculator"></div>
+			<div class="converter calculator"></div>
+
 		</div>
 		<script src="script.js"></script>
 	</body>
