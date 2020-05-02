@@ -38,7 +38,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  border: solid 1px red;
   align-items: center;
 }
 .standartContainer {
