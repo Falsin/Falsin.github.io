@@ -353,3 +353,8 @@ function Iterations(array, arg, assign) {
 		}
 	}
 }
+
+window.addEventListener('orientationchange', function () {
+	alert('orientationchange');
+})
+
