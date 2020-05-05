@@ -363,8 +363,8 @@ window.addEventListener('orientationchange', function () {
 		calculator[1].classList.add('activeCalc');
 		//calculator[1].style.width = "100%";
 		//calculator[1].style.height = "100%";
-		container.style.width = '100%';
-		container.style.height = '100%';
+		container.style.width = '100vw';
+		container.style.height = '100vh';
 		calculator[1].style.border = "solid red 1px";			
 	}
 })
