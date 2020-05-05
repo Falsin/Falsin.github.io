@@ -353,7 +353,7 @@ function Iterations(array, arg, assign) {
 		}
 	}
 }
-
+/*
 window.addEventListener('orientationchange', function () {
 	if (window.orientation > 0 || window.orientation < 0) {
 		navDiv.style.display = 'none';
@@ -372,4 +372,4 @@ window.addEventListener('orientationchange', function () {
 			console.log(bla[i]);
 		}		
 	}
-})
+})*/
