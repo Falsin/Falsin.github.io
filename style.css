@@ -359,6 +359,7 @@ html {
   }
   .calculator .fix {
     border: solid green 1px;
+    display: flex;
   }
   nav {
     display: none;
