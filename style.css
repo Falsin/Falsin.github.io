@@ -349,24 +349,24 @@ html {
     width: calc(100% / 4);
   }
 }
-@media screen and (orientation:landscape) {
-	.calculator .grid {
-		height: 100%;
-		/*grid-row-gap: 10px;
+@media screen and (orientation: landscape) {
+  .calculator .grid {
+    height: 100%;
+    /*grid-row-gap: 10px;
 		grid-column-gap: 10px;*/
-		padding: 1vw;
-		border: solid green 1px;
-	}
-	nav {
-		display: none;
-	}
-	#container {
-		height: 100%;
-		border: solid red 1px;
-	}
-	.calculator {
-		height: 100%;
-		border: solid yellow 1px;
-	}	
+    padding: 1vw;
+    border: solid green 1px;
+  }
+  nav {
+    display: none;
+  }
+  #container {
+    height: 100%;
+    border: solid red 1px;
+  }
+  .calculator {
+    height: 100%;
+    border: solid yellow 1px;
+  }
 }
 
