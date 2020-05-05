@@ -349,22 +349,22 @@ html {
     width: calc(100% / 4);
   }
 }
-@media screen and (orientation:landscape) {
-	.calculator .grid {
-		grid-row-gap: 10px;
-		grid-column-gap: 10px;
-		padding: 1vw;
-	}
-	nav {
-		display: none;
-	}
-	#container {
-		height: 100%;
-		border: solid red 1px;
-	}
-	.calculator {
-		.size(100%, 100%);
-		border: solid yellow 1px;
-	}	
+@media screen and (orientation: landscape) {
+  .calculator .grid {
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    padding: 1vw;
+  }
+  nav {
+    display: none;
+  }
+  #container {
+    height: 100%;
+    border: solid red 1px;
+  }
+  .calculator {
+    height: 100%;
+    border: solid yellow 1px;
+  }
 }
 
