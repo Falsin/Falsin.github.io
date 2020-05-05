@@ -349,3 +349,9 @@ html {
     width: calc(100% / 4);
   }
 }
+@media screen and (orientation: landscape) {
+  .calculator .grid {
+    grid-gap: 10px;
+    padding: 1vw;
+  }
+}
