@@ -357,6 +357,10 @@ function Iterations(array, arg, assign) {
 window.addEventListener('orientationchange', function () {
 	if (window.orientation > 0 || window.orientation < 0) {
 		navDiv.style.display = 'none';
+		for (let i = 0; i < nav.length; i++) {
+			calculator[i].classList.remove('activeCalc');
+		}
+		calculator[1].classList.add('activeCalc');		
 	}
 })
 
