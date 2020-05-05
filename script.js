@@ -353,20 +353,3 @@ function Iterations(array, arg, assign) {
 		}
 	}
 }
-
-window.addEventListener('orientationchange', function () {
-	if (window.orientation > 0 || window.orientation < 0) {
-		navDiv.style.display = 'none';
-		for (let i = 0; i < nav.length; i++) {
-			calculator[i].classList.remove('activeCalc');
-		}
-		calculator[1].classList.add('activeCalc');
-		//calculator[1].style.width = "100%";
-		//calculator[1].style.height = "100%";
-		container.style.width = '100vw';
-		container.style.height = '100vh';
-		calculator[1].style.border = "solid red 1px";			
-	}
-})
-
-
