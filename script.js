@@ -360,6 +360,7 @@ window.addEventListener('orientationchange', function () {
 		for (let i = 0; i < nav.length; i++) {
 			calculator[i].classList.remove('activeCalc');
 		}
+		calculator[1].classList.add('activeCalc');
 	}
 })
 /*
