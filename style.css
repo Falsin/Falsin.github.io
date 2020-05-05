@@ -351,7 +351,7 @@ html {
 }
 @media screen and (orientation: landscape) {
   .calculator .grid {
-    grid-gap: 10px;
+    grid-gap: 20px;
     padding: 1vw;
   }
   nav {
