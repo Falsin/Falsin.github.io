@@ -367,8 +367,9 @@ window.addEventListener('orientationchange', function () {
 		container.style.height = '100%';
 		calculator[1].style.border = "solid red 1px";
 		for (let i = 0; i < bla.length; i++) {
-			bla[i].style.width = '2vw';
-			bla[i].style.width = '2vh';
-		}			
+			bla[i].style.width = '1vw';
+			bla[i].style.width = '1vh';
+			console.log(bla[i]);
+		}		
 	}
 })
