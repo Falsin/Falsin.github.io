@@ -354,4 +354,7 @@ html {
     grid-gap: 10px;
     padding: 1vw;
   }
+  nav {
+    display: none;
+  }
 }
