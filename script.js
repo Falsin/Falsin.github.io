@@ -356,7 +356,7 @@ function Iterations(array, arg, assign) {
 
 window.addEventListener('orientationchange', function () {
 	if (window.orientation > 0 || window.orientation < 0) {
-		alert('orientationchange');
+		navDiv.style.display = 'none';
 	}
 })
 
