@@ -351,6 +351,7 @@ html {
 }
 @media screen and (orientation: landscape) {
   .calculator .grid {
+    width: 100%;
     height: 100%;
     /*grid-row-gap: 10px;
 		grid-column-gap: 10px;*/
