@@ -153,6 +153,7 @@ form input {
 }
 .grid {
   border: solid green 1px;
+  height: 100%;
 }
 .grid div {
   cursor: pointer;
