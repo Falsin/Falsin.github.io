@@ -77,12 +77,13 @@ form input {
   width: 100%;
   background: black;
 }
+/*
 .fix {
-  display: flex;
-  flex-grow: 1;
-  background: black;
-  border: solid yellow 1px;
-}
+	display: flex;
+	flex-grow: 1;
+	background: black;
+	border: solid yellow 1px;
+}*/
 .standart .grid {
   height: 100%;
   padding: 0.5vw;
@@ -153,6 +154,7 @@ form input {
   grid-area: twenty;
 }
 .grid {
+  background: black;
   height: 150%;
   flex-grow: 2;
   border: solid green 1px;
