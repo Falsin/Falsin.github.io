@@ -85,7 +85,6 @@ form input {
 	border: solid yellow 1px;
 }*/
 .standart .grid {
-  height: 100%;
   padding: 0.5vw;
   display: grid;
   grid-template-areas: "one two three four" "five six seven eight" "nine ten eleven twelve" "thirteen fourteen fifteen sixteen" "seventeen eighteen nineteen twenty";
@@ -155,7 +154,6 @@ form input {
 }
 .grid {
   background: black;
-  height: 150%;
   flex-grow: 2;
   border: solid green 1px;
 }
@@ -177,7 +175,6 @@ form input {
   width: 100%;
 }
 .extended .grid {
-  height: 100%;
   padding: 0.5vw;
   display: grid;
   grid-template-areas: "fraction powerDec squared one two three four" "root cubed cubicRoot five six seven eight" "power natLog decLog nine ten eleven twelve" "factorial sin cos thirteen fourteen fifteen sixteen" "tan e PI seventeen eighteen nineteen twenty";
@@ -337,8 +334,6 @@ html {
     height: 100%;
   }
   .calculator .grid {
-    width: 100%;
-    height: 100%;
     grid-gap: 10px;
     padding: 1vw;
   }
