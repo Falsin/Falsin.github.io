@@ -153,6 +153,7 @@ form input {
   grid-area: twenty;
 }
 .grid {
+  margin-top: auto;
   flex-grow: 1;
   border: solid green 1px;
   height: 100%;
