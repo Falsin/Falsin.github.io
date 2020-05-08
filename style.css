@@ -80,6 +80,7 @@ form input {
 .fix {
   flex-grow: 1;
   background: black;
+  border: solid yellow 1px;
 }
 .standart .grid {
   height: 100%;
@@ -149,6 +150,9 @@ form input {
 }
 .standart .grid-equals {
   grid-area: twenty;
+}
+.grid {
+  border: solid green 1px;
 }
 .grid div {
   cursor: pointer;
