@@ -78,7 +78,6 @@ form input {
   background: black;
 }
 .fix {
-  flex-grow: 1;
   background: black;
   border: solid yellow 1px;
 }
