@@ -372,7 +372,7 @@ window.addEventListener('orientationchange', function () {
 		container.style.height = '100vh';
 		calculator[1].style.height = '100%';
 		calculator[1].style.width = '100%';
-		let height = bla[0].offsetHeight / 1.6;
+		let height = bla[0].clientHeight / 1.6;
 		for (let i = 0; i < calculator.length; i++) {
 			calculator[i].classList.remove('activeCalc');
 		}
@@ -382,9 +382,9 @@ window.addEventListener('orientationchange', function () {
 			bla[i].style.paddingTop = '0';
 			bla[i].style.paddingBottom = '0';
 		}
-		let lmmomo = table[20].offsetHeight;
+		let lmmomo = table[20].clientHeight;
 		for (let i = 20; i < table.length; i++) {
-			console.log(table[i].offsetWidth);
+			console.log(table[i].clientWidth);
 			table[i].style.width = lmmomo;
 		}
 	} else {
