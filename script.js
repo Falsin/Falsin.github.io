@@ -367,14 +367,28 @@ window.addEventListener('orientationchange', function () {
 window.addEventListener('orientationchange', function () {
 	if (window.orientation > 0 || window.orientation < 0) {
 		navDiv.style.display = 'none';
+		calculator[1].style.margin = '0';
+		container.style.width = '100%';
+		container.style.height = '100vh';
+		calculator[1].style.height = '100%';
+		calculator[1].style.width = '100%';
+		let height = bla[0].offsetHeight / 1.6;
 		for (let i = 0; i < calculator.length; i++) {
 			calculator[i].classList.remove('activeCalc');
 		}
-		calculator[1].classList.add('activeCalc');
+		calculator[1].classList.add('activeCalc');		
+		for (let i = 20; i < bla.length; i++) {
+			bla[i].style.height = height + 'px';
+			bla[i].style.paddingTop = '0';
+			bla[i].style.paddingBottom = '0';
+		}
+		let lmmomo = table[20].offsetHeight;
+		for (let i = 20; i < table.length; i++) {
+			console.log(table[i].offsetWidth);
+			table[i].style.width = lmmomo;
+		}
 	} else {
-		for (let i = 0; i < calculator.length; i++) {
-			calculator[i].classList.remove('activeCalc');
-		}
-		calculator[0].classList.add('activeCalc');
+		calculator[1].classList.remove('activeCalc');
+		calculator[0].classList.add('activeCalc');	
 	}
 })
