@@ -38,7 +38,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  border: solid 1px red;
   align-items: center;
 }
 .standartContainer {
@@ -155,7 +154,6 @@ form input {
   cursor: pointer;
   position: relative;
   box-sizing: border-box;
-  border: solid red 1px;
 }
 .grid div span {
   display: inline-block;
