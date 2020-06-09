@@ -6,6 +6,7 @@ let container		 = document.getElementById('container');
 let navDiv 			 = document.querySelector('nav');
 let nav  			 = document.querySelectorAll('.nav');
 let calculator 		 = document.querySelectorAll('.calculator');
+let bla				 = document.querySelectorAll('.bla')
 
 let inputs 			 = document.querySelectorAll('input');
 let numbers 		 = document.querySelectorAll('.number');
