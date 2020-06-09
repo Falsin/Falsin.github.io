@@ -358,12 +358,20 @@ function Iterations(array, arg, assign) {
 	}
 }
 
+if (document.documentElement.clientWidth < 600) {
+	let timerId = setTimeout(function stick() {
+		//console.log(document.documentElement.clientHeight);
+		container.style.height = document.documentElement.clientHeight;
+		timerId = setTimeout(stick, 1000);
+	}, 1000)
+}
+
 window.addEventListener('orientationchange', function () {
 	if (window.orientation > 0 || window.orientation < 0) {
 		navDiv.style.display = 'none';
 		calculator[1].style.margin = '0';
 		container.style.width = '100%';
-		container.style.height = '100vh';
+		//container.style.height = '100vh';
 		calculator[1].style.height = '100%';
 		calculator[1].style.width = '100%';
 		let height = bla[0].clientHeight / 1.6;
@@ -386,8 +394,3 @@ window.addEventListener('orientationchange', function () {
 		calculator[0].classList.add('activeCalc');	
 	}
 })
-
-let timerId = setTimeout(function stick() {
-	console.log(document.documentElement.clientHeight);
-	timerId = setTimeout(stick, 1000);
-}, 1000)
