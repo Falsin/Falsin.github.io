@@ -360,7 +360,7 @@ function Iterations(array, arg, assign) {
 	}
 }
 
-if (document.documentElement.clientWidth < 600) {
+if (document.documentElement.clientWidth < 800) {
 	let timerId = setTimeout(function stick() {
 		//console.log(document.documentElement.clientHeight);
 		container.style.height = document.documentElement.clientHeight;
