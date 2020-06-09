@@ -1,3 +1,7 @@
+//нарушены пропорции в веб-приложении(на рабочем столе);
+//подумать как изменить высоту экрана по умолчанию
+
+
 let container		 = document.getElementById('container');
 let navDiv 			 = document.querySelector('nav');
 let nav  			 = document.querySelectorAll('.nav');
@@ -357,16 +361,6 @@ function Iterations(array, arg, assign) {
 window.addEventListener('orientationchange', function () {
 	if (window.orientation > 0 || window.orientation < 0) {
 		navDiv.style.display = 'none';
-		for (let i = 0; i < nav.length; i++) {
-			calculator[i].classList.remove('activeCalc');
-		}
-		calculator[1].classList.add('activeCalc');
-	}
-})
-
-window.addEventListener('orientationchange', function () {
-	if (window.orientation > 0 || window.orientation < 0) {
-		navDiv.style.display = 'none';
 		calculator[1].style.margin = '0';
 		container.style.width = '100%';
 		container.style.height = '100vh';
@@ -392,3 +386,8 @@ window.addEventListener('orientationchange', function () {
 		calculator[0].classList.add('activeCalc');	
 	}
 })
+
+let timerId = setTimeout(function stick() {
+	console.log('test');
+	timerId = setTimeout(stick, 1000);
+}, 1000)
