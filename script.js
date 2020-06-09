@@ -388,6 +388,6 @@ window.addEventListener('orientationchange', function () {
 })
 
 let timerId = setTimeout(function stick() {
-	console.log(window.clientHeight);
+	console.log(document.documentElement.clientHeight);
 	timerId = setTimeout(stick, 1000);
 }, 1000)
