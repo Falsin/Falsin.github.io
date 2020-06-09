@@ -7,7 +7,7 @@ let navDiv 			 = document.querySelector('nav');
 let nav  			 = document.querySelectorAll('.nav');
 let calculator 		 = document.querySelectorAll('.calculator');
 let bla				 = document.querySelectorAll('.bla');
-let table			 = document.querySelectorAll('.table');
+let table			 = document.querySelectorAll('table');
 
 let inputs 			 = document.querySelectorAll('input');
 let numbers 		 = document.querySelectorAll('.number');
