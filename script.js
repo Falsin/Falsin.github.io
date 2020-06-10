@@ -1,3 +1,20 @@
+let widthWindow = document.documentElement.clientWidth;
+let heightWindow = document.documentElement.heightWindow;
+
+let elements = document.querySelectorAll('.element');
+
+if (widthWindow < heightWindow) {
+	for (let i = 0; i < elements.length; i++) {
+		elements[i].style.width = widthWindow / 5 + 'px';
+		elements[i].style.heigth = widthWindow / 5 + 'px';
+	}
+} else {
+	for (let i = 0; i < elements.length; i++) {
+		elements[i].style.width = heightWindow / 6 + 'px';
+		elements[i].style.heigth = widthWindow / 6 + 'px';
+	}
+}
+
 /* let container		 = document.getElementById('container');
 let navDiv 			 = document.querySelector('nav');
 let nav  			 = document.querySelectorAll('.nav');

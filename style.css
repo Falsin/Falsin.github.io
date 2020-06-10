@@ -31,8 +31,6 @@ form {
   border: solid red 1px;
 }
 .element {
-  width: 20px;
-  height: 20px;
   background: gray;
   border: solid green 1px;
 }
