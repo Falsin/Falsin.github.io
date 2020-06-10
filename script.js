@@ -6,15 +6,15 @@ let elements = document.querySelectorAll('.element');
 if (widthWindow < heightWindow) {
 	for (let i = 0; i < elements.length; i++) {
 		let width = widthWindow / 5;
-		elements[i].style.width = width + 'px';
-		elements[i].style.heigth = (widthWindow / 5) + 'px';
+		elements[i].style.width  = `${width}:px`;
+		elements[i].style.heigth = `${width}:px`;
 		console.log(elements[i].style.width)
 	}
 } else {
 	for (let i = 0; i < elements.length; i++) {
 		let heigth = heightWindow / 6;
-		//elements[i].style.width = heigth + 'px';
-		elements[i].style.heigth = heigth + 'px';
+		elements[i].style.width  = `${heigth}:px`;
+		elements[i].style.heigth = `${heigth}:px`;
 		console.log(elements[i].style.width)
 	}
 }
