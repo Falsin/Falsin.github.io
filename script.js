@@ -405,16 +405,16 @@ window.addEventListener('orientationchange', function () {
 		let heightGrid = Math.round(grid[1].clientHeight / 10); // new
 		console.log(heightGrid)	
 		for (let i = 20; i < bla.length; i++) {
-			bla[i].style.height = heightGrid + 'px';
-			bla[i].style.width = heightGrid + 'px';
+			/*bla[i].style.height = heightGrid + 'px';
+			bla[i].style.width = heightGrid + 'px';*/
 			bla[i].style.paddingTop = '0';
 			bla[i].style.paddingBottom = '0';
 		}
 		//let lmmomo = table[20].clientHeight;
-		/*for (let i = 20; i < table.length; i++) {
-			console.log(table[i].clientWidth);
-			table[i].style.width = lmmomo;
-		}*/
+		for (let i = 20; i < table.length; i++) {
+			table[i].style.height = heightGrid + 'px';
+			table[i].style.width = heightGrid + 'px';
+		}
 	} else {
 		calculator[1].classList.remove('activeCalc');
 		calculator[0].classList.add('activeCalc');	
