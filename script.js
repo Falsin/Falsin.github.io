@@ -6,18 +6,48 @@ let elements = document.querySelectorAll('.element');
 if (widthWindow < heightWindow) {
 	for (let i = 0; i < elements.length; i++) {
 		let width = widthWindow / 5;
-		elements[i].style.width  = `${width}:px`;
-		elements[i].style.heigth = `${width}:px`;
+		elements[i].style.width = width + 'px';
+		elements[i].style.heigth = width + 'px';
 		console.log(elements[i].style.width)
 	}
 } else {
 	for (let i = 0; i < elements.length; i++) {
 		let heigth = heightWindow / 6;
-		elements[i].style.width  = `${heigth}:px`;
-		elements[i].style.heigth = `${heigth}:px`;
-		console.log(elements[i].style.width)
+		elements[i].style.width  = heigth + 'px';
+		elements[i].style.heigth = heigth + 'px';
+		console.log(elements[i].clientHeight);
+		console.log(elements[i].clientWidth);
 	}
 }
+/*
+window.addEventListener('orientationchange', function () {
+	if (window.orientation > 0 || window.orientation < 0) {
+		navDiv.style.display = 'none';
+		calculator[1].style.margin = '0';
+		container.style.width = '100%';
+		//container.style.height = '100vh';
+		calculator[1].style.height = '100%';
+		calculator[1].style.width = '100%';
+		let height = bla[0].clientHeight / 1.6;
+		for (let i = 0; i < calculator.length; i++) {
+			calculator[i].classList.remove('activeCalc');
+		}
+		calculator[1].classList.add('activeCalc');		
+		for (let i = 20; i < bla.length; i++) {
+			bla[i].style.height = height + 'px';
+			bla[i].style.paddingTop = '0';
+			bla[i].style.paddingBottom = '0';
+		}
+		let lmmomo = table[20].clientHeight;
+		for (let i = 20; i < table.length; i++) {
+			console.log(table[i].clientWidth);
+			table[i].style.width = lmmomo;
+		}
+	} else {
+		calculator[1].classList.remove('activeCalc');
+		calculator[0].classList.add('activeCalc');	
+	}
+})*/
 
 /* let container		 = document.getElementById('container');
 let navDiv 			 = document.querySelector('nav');
