@@ -409,11 +409,11 @@ window.addEventListener('orientationchange', function () {
 			bla[i].style.paddingTop = '0';
 			bla[i].style.paddingBottom = '0';
 		}
-		let lmmomo = table[20].clientHeight;
-		for (let i = 20; i < table.length; i++) {
+		//let lmmomo = table[20].clientHeight;
+		/*for (let i = 20; i < table.length; i++) {
 			console.log(table[i].clientWidth);
 			table[i].style.width = lmmomo;
-		}
+		}*/
 	} else {
 		calculator[1].classList.remove('activeCalc');
 		calculator[0].classList.add('activeCalc');	
