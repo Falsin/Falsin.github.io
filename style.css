@@ -26,8 +26,8 @@ form {
   display: flex;
 }
 .element {
-  width: 10%;
-  height: 10%;
+  width: 10px;
+  height: 10px;
   background: gray;
 }
 /* * {
