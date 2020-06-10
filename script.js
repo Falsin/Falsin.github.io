@@ -13,7 +13,7 @@ if (widthWindow < heightWindow) {
 } else {
 	for (let i = 0; i < elements.length; i++) {
 		let height = Math.round(heightWindow / 6);
-		elements[i].style.width  = heigth + 'px';
+		elements[i].style.width  = height + 'px';
 		elements[i].style.height = height + 'px';
 		console.log(elements[i].clientHeight);
 		console.log(elements[i].clientWidth);
