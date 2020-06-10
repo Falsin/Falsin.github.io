@@ -1,5 +1,5 @@
 let widthWindow = document.documentElement.clientWidth;
-let heightWindow = document.documentElement.heightWindow;
+let heightWindow = document.documentElement.clientHeight;
 
 let elements = document.querySelectorAll('.element');
 
