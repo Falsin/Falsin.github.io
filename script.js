@@ -388,8 +388,6 @@ if (document.documentElement.clientWidth < 800) {
 }
 
 let grid = document.querySelectorAll('.grid'); // new
-let heightGrid = grid[1].clientHeight / 3; // new
-console.log(heightGrid)
 
 window.addEventListener('orientationchange', function () {
 	if (window.orientation > 0 || window.orientation < 0) {
@@ -403,7 +401,9 @@ window.addEventListener('orientationchange', function () {
 		for (let i = 0; i < calculator.length; i++) {
 			calculator[i].classList.remove('activeCalc');
 		}
-		calculator[1].classList.add('activeCalc');		
+		calculator[1].classList.add('activeCalc');
+		let heightGrid = grid[1].clientHeight / 3; // new
+		console.log(heightGrid)	
 		for (let i = 20; i < bla.length; i++) {
 			bla[i].style.height = heightGrid + 'px';
 			bla[i].style.width = heightGrid + 'px';
