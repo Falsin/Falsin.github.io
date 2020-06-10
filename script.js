@@ -7,14 +7,14 @@ if (widthWindow < heightWindow) {
 	for (let i = 0; i < elements.length; i++) {
 		let width = Math.round(widthWindow / 5);
 		elements[i].style.width = width + 'px';
-		elements[i].style.heigth = width + 'px';
+		elements[i].style.height = width + 'px';
 		console.log(elements[i].style.width)
 	}
 } else {
 	for (let i = 0; i < elements.length; i++) {
-		let heigth = Math.round(heightWindow / 6);
+		let height = Math.round(heightWindow / 6);
 		elements[i].style.width  = heigth + 'px';
-		elements[i].style.heigth = heigth + 'px';
+		elements[i].style.height = height + 'px';
 		console.log(elements[i].clientHeight);
 		console.log(elements[i].clientWidth);
 	}
