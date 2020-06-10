@@ -336,9 +336,10 @@ html {
   width: auto;
   height: 100%;
 }
+/*
 .grid div {
-  padding: 10%;
-}
+	padding: 10%;
+}*/
 @media screen and (max-width: 1600px) {
   .standartContainer {
     width: 24vw;
