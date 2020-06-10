@@ -402,7 +402,7 @@ window.addEventListener('orientationchange', function () {
 			calculator[i].classList.remove('activeCalc');
 		}
 		calculator[1].classList.add('activeCalc');
-		let heightGrid = grid[1].clientHeight / 6; // new
+		let heightGrid = Math.round(grid[1].clientHeight / 7); // new
 		console.log(heightGrid)	
 		for (let i = 20; i < bla.length; i++) {
 			bla[i].style.height = heightGrid + 'px';
