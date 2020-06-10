@@ -25,6 +25,9 @@ form {
   border: solid orange 1px;
   display: flex;
 }
+.line {
+  display: flex;
+}
 .element {
   width: 10px;
   height: 10px;
