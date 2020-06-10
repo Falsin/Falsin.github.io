@@ -1,8 +1,4 @@
-//нарушены пропорции в веб-приложении(на рабочем столе);
-//подумать как изменить высоту экрана по умолчанию
-
-
-let container		 = document.getElementById('container');
+/* let container		 = document.getElementById('container');
 let navDiv 			 = document.querySelector('nav');
 let nav  			 = document.querySelectorAll('.nav');
 let calculator 		 = document.querySelectorAll('.calculator');
@@ -395,4 +391,4 @@ window.addEventListener('orientationchange', function () {
 		calculator[1].classList.remove('activeCalc');
 		calculator[0].classList.add('activeCalc');	
 	}
-})
+}) */
