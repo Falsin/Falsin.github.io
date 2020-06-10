@@ -1,40 +1,4 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-#container {
-  width: 100%;
-  height: 100%;
-  background: black;
-  border: solid red 1px;
-}
-form {
-  width: 100%;
-  height: 10%;
-  border: solid green 1px;
-}
-.field {
-  width: 100%;
-  height: 90%;
-  border: solid orange 1px;
-  display: flex;
-  flex-direction: column;
-}
-.line {
-  display: flex;
-  border: solid red 1px;
-}
-.element {
-  background: gray;
-  border: solid green 1px;
-}
-/* * {
+/** {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -50,290 +14,391 @@ form {
 	height: @height;
 }
 
-nav {
-	display: flex;
-	background: #1DD300;
-	font-size: 1.2vw;
-	text-align: center;
-	position: relative;
+html, body {
+	.size(100%, 100%);
 }
 
-nav div {
-	justify-content: center;
-	align-items: center;
-	display: flex;
-	cursor: pointer;
-	padding-top: 0.5vw;
-	padding-bottom: 0.5vw;
-}
-
-nav div:not(:last-child) {
-	border-right: 1px solid #033333;
-	vertical-align: middle;
-}
-
-.active {
-	box-shadow: inset 0 -8px 8px 0 yellow;
-}
-
-body {
-	.size(auto, 100%);
-	display: flex;
-	justify-content: center;
-	font-size: 2vw;
-	color: white;
-	background: #033333;
-}
-
-#container {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.standartContainer {
-	width: 24vw;
-}
-
-.extendedContainer {
-	width: 34vw;
-}
-
-.calculator {
-	display: none;
-}
-
-.standart,
-.extended {
-	height: 35vw;
-	margin-top: auto;
-	margin-bottom: auto;
-	flex-direction: column;
-	width: 100%;
+#container{
+	.size(100%, 100%);
 	background: black;
-}
-
-.activeCalc {
-	display: flex;
+	border: solid red 1px;
 }
 
 form {
 	.size(100%, 10%);
-	display: flex;
+	border: solid green 1px;
 }
 
-form input {
-	font-size: 3vw;
-	color: white;
-	padding: 1vw;
-	text-align: right;
-	outline: none;
-	border: none;
-	width: 100%;
-	background: black;
-}
-
-.standart .grid {
-	display: grid;
-	grid-template-areas: 
-		"one two three four"
-		"five six seven eight"
-		"nine ten eleven twelve"
-		"thirteen fourteen fifteen sixteen"
-		"seventeen eighteen nineteen twenty";
-
-	&-cancel {grid-area: one;}
-	&-delete {grid-area: two;}
-	&-percent {grid-area: three;}
-	&-divide {grid-area: four;}
-
-	&-seven {grid-area: five;}
-	&-eight {grid-area: six;}
-	&-nine {grid-area: seven;}
-	&-times {grid-area: eight;}
-
-	&-four {grid-area: nine;}
-	&-five {grid-area: ten;}
-	&-six {grid-area: eleven;}
-	&-minus {grid-area: twelve;}
-
-	&-one {grid-area: thirteen;}
-	&-two {grid-area: fourteen;}
-	&-three {grid-area: fifteen;}
-	&-plus {grid-area: sixteen;}
-
-	&-additiveInverse {grid-area: seventeen;}
-	&-zero {grid-area: eighteen;}
-	&-dot {grid-area: nineteen;}
-	&-equals {grid-area: twenty;}
-
-	grid-template-columns: repeat(4, 1fr);
-	grid-gap: 0.5vw;
-	grid-template-rows: repeat(5, auto);
-}
-
-.grid {
-	background: black;
-	flex-grow: 2;
+.field {
 	.size(100%, 90%);
+	border: solid orange 1px;
+	display: flex;
+	flex-direction: column;
 }
 
-.grid div {
-	cursor: pointer;
-	position: relative;
-	box-sizing: border-box;
+.line {
+	display: flex;
 	border: solid red 1px;
 }
 
-
-.grid div span {
-	display: inline-block;
-	background: green;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 100%;
+.element {
+	//.size(20px, 20px);
+	background: gray;
+	border: solid green 1px;
+}*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-table {
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	background: #333333;
-	border-radius: 50%;
+nav {
+  display: flex;
+  background: #1DD300;
+  font-size: 1.2vw;
+  text-align: center;
+  position: relative;
 }
-
-.extended .grid {
-	padding: 0.5vw;
-	display: grid;
-	grid-template-areas: 
-		"fraction powerDec squared one two three four"
-		"root cubed cubicRoot five six seven eight"
-		"power natLog decLog nine ten eleven twelve"
-		"factorial sin cos thirteen fourteen fifteen sixteen"
-		"tan e PI seventeen eighteen nineteen twenty";
-
-	&-fraction {grid-area: fraction;}
-	&-powerDec {grid-area: powerDec;}
-	&-squared {grid-area: squared;}
-	&-cancel {grid-area: one;}
-	&-Delete {grid-area: two;}
-	&-percent {grid-area: three;}
-	&-divide {grid-area: four;}
-
-	&-root {grid-area: root;}
-	&-cubed {grid-area: cubed;}
-	&-cubicRoot {grid-area: cubicRoot;}
-	&-seven {grid-area: five;}
-	&-eight {grid-area: six;}
-	&-nine {grid-area: seven;}
-	&-times {grid-area: eight;}
-
-	&-power {grid-area: power;}
-	&-natLog {grid-area: natLog;}
-	&-decLog {grid-area: decLog;}
-	&-four {grid-area: nine;}
-	&-five {grid-area: ten;}
-	&-six {grid-area: eleven;}
-	&-minus {grid-area: twelve;}
-
-	&-factorial {grid-area: factorial;}
-	&-sin {grid-area: sin;}
-	&-cos {grid-area: cos;}
-	&-one {grid-area: thirteen;}
-	&-two {grid-area: fourteen;}
-	&-three {grid-area: fifteen;}
-	&-plus {grid-area: sixteen;}
-
-	&-tan {grid-area: tan;}
-	&-e {grid-area: e;}
-	&-PI {grid-area: PI;}
-	&-additiveInverse {grid-area: seventeen;}
-	&-zero {grid-area: eighteen;}
-	&-dot {grid-area: nineteen;}
-	&-equals {grid-area: twenty;}
-
-	grid-template-columns: repeat(7, 1fr);
-	grid-gap: 0.5vw;
-	grid-template-rows: repeat(5, auto);
+nav div {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
 }
-
-html {
-	.size(auto, 100%);
+nav div:not(:last-child) {
+  border-right: 1px solid #033333;
+  vertical-align: middle;
 }
-
+.active {
+  box-shadow: inset 0 -8px 8px 0 yellow;
+}
+body {
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 2vw;
+  color: white;
+  background: #033333;
+}
+#container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.standartContainer {
+  width: 24vw;
+}
+.extendedContainer {
+  width: 34vw;
+}
+.calculator {
+  display: none;
+}
+.standart,
+.extended {
+  height: 35vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-direction: column;
+  width: 100%;
+  background: black;
+}
+.activeCalc {
+  display: flex;
+}
+form {
+  width: 100%;
+  height: 10%;
+  display: flex;
+}
+form input {
+  font-size: 3vw;
+  color: white;
+  padding: 1vw;
+  text-align: right;
+  outline: none;
+  border: none;
+  width: 100%;
+  background: black;
+}
+.standart .grid {
+  display: grid;
+  grid-template-areas: "one two three four" "five six seven eight" "nine ten eleven twelve" "thirteen fourteen fifteen sixteen" "seventeen eighteen nineteen twenty";
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.5vw;
+  grid-template-rows: repeat(5, auto);
+}
+.standart .grid-cancel {
+  grid-area: one;
+}
+.standart .grid-delete {
+  grid-area: two;
+}
+.standart .grid-percent {
+  grid-area: three;
+}
+.standart .grid-divide {
+  grid-area: four;
+}
+.standart .grid-seven {
+  grid-area: five;
+}
+.standart .grid-eight {
+  grid-area: six;
+}
+.standart .grid-nine {
+  grid-area: seven;
+}
+.standart .grid-times {
+  grid-area: eight;
+}
+.standart .grid-four {
+  grid-area: nine;
+}
+.standart .grid-five {
+  grid-area: ten;
+}
+.standart .grid-six {
+  grid-area: eleven;
+}
+.standart .grid-minus {
+  grid-area: twelve;
+}
+.standart .grid-one {
+  grid-area: thirteen;
+}
+.standart .grid-two {
+  grid-area: fourteen;
+}
+.standart .grid-three {
+  grid-area: fifteen;
+}
+.standart .grid-plus {
+  grid-area: sixteen;
+}
+.standart .grid-additiveInverse {
+  grid-area: seventeen;
+}
+.standart .grid-zero {
+  grid-area: eighteen;
+}
+.standart .grid-dot {
+  grid-area: nineteen;
+}
+.standart .grid-equals {
+  grid-area: twenty;
+}
+.grid {
+  background: black;
+  flex-grow: 2;
+  width: 100%;
+  height: 90%;
+}
 .grid div {
-	padding: 10%;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  border: solid red 1px;
 }
-
+.grid div span {
+  display: inline-block;
+  background: green;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100%;
+}
+table {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #333333;
+  border-radius: 50%;
+}
+.extended .grid {
+  padding: 0.5vw;
+  display: grid;
+  grid-template-areas: "fraction powerDec squared one two three four" "root cubed cubicRoot five six seven eight" "power natLog decLog nine ten eleven twelve" "factorial sin cos thirteen fourteen fifteen sixteen" "tan e PI seventeen eighteen nineteen twenty";
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 0.5vw;
+  grid-template-rows: repeat(5, auto);
+}
+.extended .grid-fraction {
+  grid-area: fraction;
+}
+.extended .grid-powerDec {
+  grid-area: powerDec;
+}
+.extended .grid-squared {
+  grid-area: squared;
+}
+.extended .grid-cancel {
+  grid-area: one;
+}
+.extended .grid-Delete {
+  grid-area: two;
+}
+.extended .grid-percent {
+  grid-area: three;
+}
+.extended .grid-divide {
+  grid-area: four;
+}
+.extended .grid-root {
+  grid-area: root;
+}
+.extended .grid-cubed {
+  grid-area: cubed;
+}
+.extended .grid-cubicRoot {
+  grid-area: cubicRoot;
+}
+.extended .grid-seven {
+  grid-area: five;
+}
+.extended .grid-eight {
+  grid-area: six;
+}
+.extended .grid-nine {
+  grid-area: seven;
+}
+.extended .grid-times {
+  grid-area: eight;
+}
+.extended .grid-power {
+  grid-area: power;
+}
+.extended .grid-natLog {
+  grid-area: natLog;
+}
+.extended .grid-decLog {
+  grid-area: decLog;
+}
+.extended .grid-four {
+  grid-area: nine;
+}
+.extended .grid-five {
+  grid-area: ten;
+}
+.extended .grid-six {
+  grid-area: eleven;
+}
+.extended .grid-minus {
+  grid-area: twelve;
+}
+.extended .grid-factorial {
+  grid-area: factorial;
+}
+.extended .grid-sin {
+  grid-area: sin;
+}
+.extended .grid-cos {
+  grid-area: cos;
+}
+.extended .grid-one {
+  grid-area: thirteen;
+}
+.extended .grid-two {
+  grid-area: fourteen;
+}
+.extended .grid-three {
+  grid-area: fifteen;
+}
+.extended .grid-plus {
+  grid-area: sixteen;
+}
+.extended .grid-tan {
+  grid-area: tan;
+}
+.extended .grid-e {
+  grid-area: e;
+}
+.extended .grid-PI {
+  grid-area: PI;
+}
+.extended .grid-additiveInverse {
+  grid-area: seventeen;
+}
+.extended .grid-zero {
+  grid-area: eighteen;
+}
+.extended .grid-dot {
+  grid-area: nineteen;
+}
+.extended .grid-equals {
+  grid-area: twenty;
+}
+html {
+  width: auto;
+  height: 100%;
+}
+.grid div {
+  padding: 10%;
+}
 @media screen and (max-width: 1600px) {
-	.standartContainer {
-		width: 24vw;
-	}
-	.extendedContainer {
-		width: 44vw;
-	}
-	.standart {
-		height: 35vw;
-	}
+  .standartContainer {
+    width: 24vw;
+  }
+  .extendedContainer {
+    width: 44vw;
+  }
+  .standart {
+    height: 35vw;
+  }
 }
-
 @media screen and (max-width: 1200px) {
-	.standartContainer {
-		width: 30vw;
-	}
-	.extendedContainer {
-		width: 45vw;
-	}
-	.standart {
-		height: 41vw;
-	}
+  .standartContainer {
+    width: 30vw;
+  }
+  .extendedContainer {
+    width: 45vw;
+  }
+  .standart {
+    height: 41vw;
+  }
 }
-
 @media screen and (max-width: 800px) {
-	.standartContainer {
-		width: 36vw;
-	}
-	.extendedContainer {
-		width: 46vw;
-	}
-	.standart {
-		height: 47vw;
-	}
+  .standartContainer {
+    width: 36vw;
+  }
+  .extendedContainer {
+    width: 46vw;
+  }
+  .standart {
+    height: 47vw;
+  }
 }
-
 @media screen and (max-width: 500px) {
-	.standartContainer {
-		.size(100%, 100%);
-	}
-
-	.standart {
-		.size(100%, 100%);
-	}
-
-	.calculator .grid {
-		grid-gap: 10px;
-		padding: 1vw;
-	}
-	
-	nav {
-		display: none;
-	}
-
-	form input {
-		height: 100%;
-		font-size: 9vw;
-		padding-right: 5vw;
-	}
-	body {
-		font-size: 7vw;
-	}
+  .standartContainer {
+    width: 100%;
+    height: 100%;
+  }
+  .standart {
+    width: 100%;
+    height: 100%;
+  }
+  .calculator .grid {
+    grid-gap: 10px;
+    padding: 1vw;
+  }
+  nav {
+    display: none;
+  }
+  form input {
+    height: 100%;
+    font-size: 9vw;
+    padding-right: 5vw;
+  }
+  body {
+    font-size: 7vw;
+  }
 }
-
 @media screen and (min-width: 500px) {
-	nav div {
-		width: calc(100% / 4);
-	}
-} */
+  nav div {
+    width: calc(100% / 4);
+  }
+}
