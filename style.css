@@ -31,9 +31,10 @@ form {
   border: solid red 1px;
 }
 .element {
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   background: gray;
+  border: solid green 1px;
 }
 /* * {
 	padding: 0;
