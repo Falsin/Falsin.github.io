@@ -388,7 +388,7 @@ if (document.documentElement.clientWidth < 800) {
 }
 
 let grid = document.querySelectorAll('.grid'); // new
-let heightGrid = grid[1].clientHeight / 6; // new
+let heightGrid = grid[1].clientHeight / 3; // new
 
 window.addEventListener('orientationchange', function () {
 	if (window.orientation > 0 || window.orientation < 0) {
