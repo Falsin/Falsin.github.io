@@ -402,8 +402,8 @@ window.addEventListener('orientationchange', function () {
 			calculator[i].classList.remove('activeCalc');
 		}
 		calculator[1].classList.add('activeCalc');
-		//let heightGrid = Math.round(grid[1].clientHeight / 10); // new
-		//console.log(heightGrid)	
+		let heightGrid = Math.round(grid[1].clientHeight / 10); // new
+		console.log(heightGrid)	
 		for (let i = 20; i < bla.length; i++) {
 			/*bla[i].style.height = heightGrid + 'px';
 			bla[i].style.width = heightGrid + 'px';*/
@@ -411,12 +411,9 @@ window.addEventListener('orientationchange', function () {
 			bla[i].style.paddingBottom = '0';
 		}
 		//let lmmomo = table[20].clientHeight;
-		let heightBla = bla[20].clientHeight;
 		for (let i = 20; i < table.length; i++) {
-			/*table[i].style.height = heightGrid + 'px';
-			table[i].style.width = heightGrid + 'px';*/
-			table[i].style.height = heightBla + 'px';
-			table[i].style.width = heightBla + 'px';
+			table[i].style.height = heightGrid + 'px';
+			table[i].style.width = heightGrid + 'px';
 		}
 	} else {
 		calculator[1].classList.remove('activeCalc');
