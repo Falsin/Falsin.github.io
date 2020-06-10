@@ -1,3 +1,25 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.marginPadding(@padding, @margin) {
+	padding: @padding,;
+	margin: @margin;
+}
+
+.size(@width, @height) {
+	width: @width;
+	height: @height;
+}
+
+#container {
+	size(100%, 100%);
+	background: black;
+	border: solid red 1px;
+}
+
 /* * {
 	padding: 0;
 	margin: 0;
