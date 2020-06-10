@@ -403,7 +403,7 @@ window.addEventListener('orientationchange', function () {
 			calculator[i].classList.remove('activeCalc');
 		}
 		calculator[1].classList.add('activeCalc');		
-		for (let i = 21; i < bla.length; i++) {
+		for (let i = 20; i < bla.length; i++) {
 			bla[i].style.height = heightGrid + 'px';
 			bla[i].style.width = heightGrid + 'px';
 			bla[i].style.paddingTop = '0';
