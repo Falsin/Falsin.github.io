@@ -5,14 +5,16 @@ let elements = document.querySelectorAll('.element');
 
 if (widthWindow < heightWindow) {
 	for (let i = 0; i < elements.length; i++) {
-		elements[i].style.width = (widthWindow / 5) + 'px';
+		let width = widthWindow / 5;
+		elements[i].style.width = width + 'px';
 		elements[i].style.heigth = (widthWindow / 5) + 'px';
 		console.log(elements[i].style.width)
 	}
 } else {
 	for (let i = 0; i < elements.length; i++) {
-		elements[i].style.width = (heightWindow / 6) + 'px';
-		elements[i].style.heigth = (heightWindow / 6) + 'px';
+		let heigth = heightWindow / 6;
+		elements[i].style.width = heigth + 'px';
+		elements[i].style.heigth = heigth + 'px';
 		console.log(elements[i].style.width)
 	}
 }
