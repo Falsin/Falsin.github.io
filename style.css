@@ -14,6 +14,16 @@ body {
   background: black;
   border: solid red 1px;
 }
+form {
+  width: 100%;
+  height: 10%;
+  border: solid green 1px;
+}
+.field {
+  width: 100%;
+  height: 90%;
+  border: solid orange 1px;
+}
 /* * {
 	padding: 0;
 	margin: 0;
