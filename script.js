@@ -3,10 +3,11 @@ let heightWindow = document.documentElement.clientHeight;
 
 let elements = document.querySelectorAll('.element');
 
+let field       = document.querySelector('.field');
 
 if (document.documentElement.clientWidth < 800) {
   let timerId = setTimeout(function stick() {
-	let field       = document.querySelector('.field');
+	//let field       = document.querySelector('.field');
 	console.log(field.clientHeight);
 	let heightField = field.clientHeight;
 	let widthField  = field.clientWidth;	  
