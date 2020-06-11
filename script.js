@@ -14,13 +14,13 @@ if (field.clientWidth < 800) {
 	//container.style.height = document.documentElement.clientHeight;
 	if (widthField  < heightField) {
 		for (let i = 0; i < elements.length; i++) {
-		  let width = Math.round(widthField / 5);
+		  let width = Math.round(widthField / 4.5);
 		  elements[i].style.width = width + 'px';
 		  elements[i].style.height = width + 'px';
 		}
 	  } else {
 		for (let i = 0; i < elements.length; i++) {
-		  let height = Math.round(heightField / 6);
+		  let height = Math.round(heightField / 5.5);
 		  elements[i].style.width  = height + 'px';
 		  elements[i].style.height = height + 'px';
 		  console.log(elements[i].clientHeight);
