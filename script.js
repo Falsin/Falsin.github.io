@@ -5,31 +5,28 @@ let elements = document.querySelectorAll('.element');
 
 let field       = document.querySelector('.field');
 
-if (field.clientWidth < 800) {
-  let timerId = setTimeout(function stick() {
-	//let field       = document.querySelector('.field');
-	console.log(field.clientHeight);
+let timerId = setTimeout(function stick() {
+  let field = document.querySelector('.field');
+  if (field.clientWidth < 800) {
 	let heightField = field.clientHeight;
 	let widthField  = field.clientWidth;	  
-	//container.style.height = document.documentElement.clientHeight;
 	if (widthField  < heightField) {
-		for (let i = 0; i < elements.length; i++) {
+	  for (let i = 0; i < elements.length; i++) {
 		  let width = Math.round(widthField / 5);
 		  elements[i].style.width = width + 'px';
 		  elements[i].style.height = width + 'px';
 		}
-	  } else {
-		for (let i = 0; i < elements.length; i++) {
-		  let height = Math.round(heightField / 6);
-		  elements[i].style.width  = height + 'px';
-		  elements[i].style.height = height + 'px';
-		  console.log(elements[i].clientHeight);
-		}
+	} else {
+	  for (let i = 0; i < elements.length; i++) {
+		let height = Math.round(heightField / 6);
+		elements[i].style.width  = height + 'px';
+		elements[i].style.height = height + 'px';
 	  }
+	}	  
+  }
+  timerId = setTimeout(stick, 1000);
+}, 1000)
 
-    timerId = setTimeout(stick, 1000);
-  }, 1000)
-}
 /*
 if (widthWindow < heightWindow) {
   for (let i = 0; i < elements.length; i++) {

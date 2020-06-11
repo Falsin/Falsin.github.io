@@ -18,33 +18,50 @@ html, body {
 	.size(100%, 100%);
 }
 
+body {
+	font-size: 25px;
+}
+
 #container{
 	.size(100%, 100%);
 	background: black;
-	border: solid red 1px;
+	//border: solid red 1px;
 }
 
 form {
 	.size(100%, 10%);
-	border: solid green 1px;
+	//border: solid green 1px;
+	display: flex;
+}
+
+input {
+	width: 100%;
+	background: black;
+	color: white;
+	outline: none;
+	border: none;
+	text-align: right;
+	padding-right: 5%;
+	padding-left: 5%;
 }
 
 .field {
 	.size(100%, 90%);
-	border: solid orange 1px;
+	//border: solid orange 1px;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
 }
 
 .line {
 	display: flex;
-	border: solid red 1px;
+	//border: solid red 1px;
+	justify-content: space-around;
 }
 
 .element {
-	//.size(20px, 20px);
 	background: gray;
-	border: solid green 1px;
+	//border: solid green 1px;
 }
 
 /*  * {
