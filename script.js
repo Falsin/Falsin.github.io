@@ -4,6 +4,7 @@ let mql = window.matchMedia("(orientation: portrait)");
 
 let fields = document.querySelectorAll('.field');
 
+
 let timerId = setTimeout(function stick() {
   let test = document.querySelector('.test');
   if (test.clientWidth < 800) {
@@ -23,17 +24,17 @@ let timerId = setTimeout(function stick() {
 	let heightTest = test.clientHeight;
 	let widthTest  = test.clientWidth;
 	if (widthTest  < heightTest) {
-	  for (let i = 0; i < elements.length; i++) {
-		  let width = Math.round(widthTest / 5);
-		  elements[i].style.width = width + 'px';
-		  elements[i].style.height = width + 'px';
+		let width = Math.round(widthTest / 5);
+		for (let i = 0; i < elements.length; i++) {
+			elements[i].style.width = width + 'px';
+		  	elements[i].style.height = width + 'px';
 		}
 	} else {
-	  for (let i = 0; i < elements.length; i++) {
 		let height = Math.round(heightTest / 6);
-		elements[i].style.width  = height + 'px';
-		elements[i].style.height = height + 'px';
-	  }
+	  	for (let i = 0; i < elements.length; i++) {
+			elements[i].style.width  = height + 'px';
+			elements[i].style.height = height + 'px';
+	  	}
 	}	  
   }
   timerId = setTimeout(stick, 1000);
