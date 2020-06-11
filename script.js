@@ -7,8 +7,8 @@ let elements = document.querySelectorAll('.element');
 if (document.documentElement.clientWidth < 800) {
   let timerId = setTimeout(function stick() {
     let field       = document.querySelector('.field');
-	let heightField = field.documentElement.clientHeight;
-	let widthField  = field.documentElement.clientWidth;	  
+	let heightField = field.clientHeight;
+	let widthField  = field.clientWidth;	  
 	//container.style.height = document.documentElement.clientHeight;
 	if (widthWindow < heightWindow) {
 		for (let i = 0; i < elements.length; i++) {
