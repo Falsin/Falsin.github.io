@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+.test {
+	.size(100%, 90%);
+}
+
 .marginPadding(@padding, @margin) {
 	padding: @padding,;
 	margin: @margin;
@@ -22,7 +26,7 @@ body {
 	font-size: 25px;
 }
 
-#container{
+.container{
 	.size(100%, 100%);
 	background: black;
 }
@@ -44,7 +48,7 @@ input {
 }
 
 .field {
-	.size(100%, 90%);
+	.size(100%, 100%);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -62,6 +66,10 @@ input {
 	justify-content: center;
 	align-items: center;
 	color: white;
+}
+
+.nonActive {
+	display: none;
 }
 
 /*  * {
