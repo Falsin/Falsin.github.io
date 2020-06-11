@@ -12,7 +12,7 @@ if (field.clientWidth < 800) {
 	let heightField = field.clientHeight;
 	let widthField  = field.clientWidth;	  
 	//container.style.height = document.documentElement.clientHeight;
-	if (widthWindow < heightWindow) {
+	if (widthField  < heightField) {
 		for (let i = 0; i < elements.length; i++) {
 		  let width = Math.round(widthField / 5);
 		  elements[i].style.width = width + 'px';
