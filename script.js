@@ -11,14 +11,14 @@ if (document.documentElement.clientWidth < 800) {
 	//container.style.height = document.documentElement.clientHeight;
 	if (widthWindow < heightWindow) {
 		for (let i = 0; i < elements.length; i++) {
-		  let width = Math.round(widthField / 2);
+		  let width = Math.round(widthField / 5);
 		  elements[i].style.width = width + 'px';
 		  elements[i].style.height = width + 'px';
 		  console.log(elements[i].style.width)
 		}
 	  } else {
 		for (let i = 0; i < elements.length; i++) {
-		  let height = Math.round(heightField/ 2);
+		  let height = Math.round(heightField / 6);
 		  elements[i].style.width  = height + 'px';
 		  elements[i].style.height = height + 'px';
 		  console.log(elements[i].clientHeight);
