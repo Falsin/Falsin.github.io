@@ -6,7 +6,8 @@ let elements = document.querySelectorAll('.element');
 
 if (document.documentElement.clientWidth < 800) {
   let timerId = setTimeout(function stick() {
-    let field       = document.querySelector('.field');
+	let field       = document.querySelector('.field');
+	console.log(field.clientHeight);
 	let heightField = field.clientHeight;
 	let widthField  = field.clientWidth;	  
 	//container.style.height = document.documentElement.clientHeight;
@@ -15,7 +16,6 @@ if (document.documentElement.clientWidth < 800) {
 		  let width = Math.round(widthField / 5);
 		  elements[i].style.width = width + 'px';
 		  elements[i].style.height = width + 'px';
-		  console.log(elements[i].style.width)
 		}
 	  } else {
 		for (let i = 0; i < elements.length; i++) {
@@ -23,7 +23,6 @@ if (document.documentElement.clientWidth < 800) {
 		  elements[i].style.width  = height + 'px';
 		  elements[i].style.height = height + 'px';
 		  console.log(elements[i].clientHeight);
-		  console.log(elements[i].clientWidth);
 		}
 	  }
 
