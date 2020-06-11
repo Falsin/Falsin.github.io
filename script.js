@@ -1,24 +1,51 @@
-let widthWindow = document.documentElement.clientWidth;
+let widthWindow  = document.documentElement.clientWidth;
 let heightWindow = document.documentElement.clientHeight;
 
 let elements = document.querySelectorAll('.element');
 
-if (widthWindow < heightWindow) {
-	for (let i = 0; i < elements.length; i++) {
-		let width = Math.round(widthWindow / 5);
-		elements[i].style.width = width + 'px';
-		elements[i].style.height = width + 'px';
-		console.log(elements[i].style.width)
-	}
-} else {
-	for (let i = 0; i < elements.length; i++) {
-		let height = Math.round(heightWindow / 6);
-		elements[i].style.width  = height + 'px';
-		elements[i].style.height = height + 'px';
-		console.log(elements[i].clientHeight);
-		console.log(elements[i].clientWidth);
-	}
+
+if (document.documentElement.clientWidth < 800) {
+  let timerId = setTimeout(function stick() {
+	let heightField = document.documentElement.clientHeight;
+	let widthField  = document.documentElement.clientWidth;	  
+	//container.style.height = document.documentElement.clientHeight;
+	if (widthWindow < heightWindow) {
+		for (let i = 0; i < elements.length; i++) {
+		  let width = Math.round(widthField / 2);
+		  elements[i].style.width = width + 'px';
+		  elements[i].style.height = width + 'px';
+		  console.log(elements[i].style.width)
+		}
+	  } else {
+		for (let i = 0; i < elements.length; i++) {
+		  let height = Math.round(heightField/ 2);
+		  elements[i].style.width  = height + 'px';
+		  elements[i].style.height = height + 'px';
+		  console.log(elements[i].clientHeight);
+		  console.log(elements[i].clientWidth);
+		}
+	  }
+
+    timerId = setTimeout(stick, 1000);
+  }, 1000)
 }
+/*
+if (widthWindow < heightWindow) {
+  for (let i = 0; i < elements.length; i++) {
+    let width = Math.round(widthWindow / 5);
+    elements[i].style.width = width + 'px';
+    elements[i].style.height = width + 'px';
+    console.log(elements[i].style.width)
+  }
+} else {
+  for (let i = 0; i < elements.length; i++) {
+    let height = Math.round(heightWindow / 6);
+    elements[i].style.width  = height + 'px';
+    elements[i].style.height = height + 'px';
+    console.log(elements[i].clientHeight);
+    console.log(elements[i].clientWidth);
+  }
+}*/
 
 /*
 let container		 = document.getElementById('container');
