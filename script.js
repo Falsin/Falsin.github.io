@@ -1,4 +1,4 @@
-/*let widthWindow = document.documentElement.clientWidth;
+let widthWindow = document.documentElement.clientWidth;
 let heightWindow = document.documentElement.clientHeight;
 
 let elements = document.querySelectorAll('.element');
@@ -18,9 +18,9 @@ if (widthWindow < heightWindow) {
 		console.log(elements[i].clientHeight);
 		console.log(elements[i].clientWidth);
 	}
-}*/
+}
 
-
+/*
 let container		 = document.getElementById('container');
 let navDiv 			 = document.querySelector('nav');
 let nav  			 = document.querySelectorAll('.nav');
@@ -405,8 +405,7 @@ window.addEventListener('orientationchange', function () {
 		let heightGrid = Math.round(grid[1].clientHeight / 10); // new
 		console.log(heightGrid)	
 		for (let i = 20; i < bla.length; i++) {
-			/*bla[i].style.height = heightGrid + 'px';
-			bla[i].style.width = heightGrid + 'px';*/
+
 			bla[i].style.paddingTop = '0';
 			bla[i].style.paddingBottom = '0';
 		}
@@ -419,4 +418,4 @@ window.addEventListener('orientationchange', function () {
 		calculator[1].classList.remove('activeCalc');
 		calculator[0].classList.add('activeCalc');	
 	}
-})
+})*/
