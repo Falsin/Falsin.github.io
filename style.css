@@ -43,7 +43,12 @@ input {
   justify-content: space-around;
 }
 .element {
-  background: gray;
+  display: flex;
+  background: #333333;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 /*  * {
 	padding: 0;
