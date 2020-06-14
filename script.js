@@ -13,15 +13,16 @@ window.onload = function () {
 }
 
 function setOrientation () {
-	let heightTest = test.clientHeight;
-	let widthTest  = test.clientWidth;
+	/*let heightTest = test.clientHeight;
+	let widthTest  = test.clientWidth;*/
+	//alert(`в${test.clientHeight} + ш${test.clientWidth}`)
 	if (!degree) {
 		for (let i = 0; i < fields.length; i++) {
 			fields[i].style.display = "none";
 		}
 		fields[0].style.display = "flex";
 
-		let width = Math.round(Math.min(heightTest, widthTest) / 5);
+		let width = Math.round(Math.min(test.clientHeight, test.clientWidth) / 5);
 		for (let i = 0; i < elements.length; i++) {
 			elements[i].style.width = width + 'px';
 		  	elements[i].style.height = width + 'px';
@@ -32,7 +33,7 @@ function setOrientation () {
 			fields[i].style.display = "none";
 		}
 		fields[1].style.display = "flex";
-		let height = Math.round(Math.min(heightTest, widthTest) / 6);
+		let height = Math.round(Math.min(test.clientHeight, test.clientWidth) / 6);
 	  	for (let i = 0; i < elements.length; i++) {
 			elements[i].style.width  = height + 'px';
 			elements[i].style.height = height + 'px';
@@ -43,7 +44,9 @@ function setOrientation () {
 
 window.addEventListener('orientationchange', function () {
 	degree = window.orientation;
-	setOrientation();
+	setTimeout(setOrientation, 50);
+	
+	//setOrientation();
 })
 
 /*
