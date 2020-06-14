@@ -49,7 +49,7 @@ input {
 
 .field {
 	.size(100%, 100%);
-	display: none;
+	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 }
@@ -68,9 +68,30 @@ input {
 	color: white;
 }
 
+
+/*@media screen and (orientation:portrait) {
+	.portrait {
+		display: flex;
+	}
+	.landscape {
+		display: none;
+	}
+}
+
+@media screen and (orientation:landscape) {
+	.portrait {
+		display: none;
+	}
+	.landscape {
+		display: flex;
+	}
+}*/
+
+
+/*
 .Active {
 	display: flex;
-}
+}*/
 
 /*
 @media screen and (orientation:landscape) and (max-device-width: 900px) {

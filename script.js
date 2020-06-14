@@ -1,13 +1,53 @@
-let orientation; 
+
 let elements = document.querySelectorAll('.element');
 let container = document.querySelector('.container');
-let mql = window.matchMedia("(orientation: portrait)");
+
 let test = document.querySelector('.test');
 let fields = document.querySelectorAll('.field');
 
+let degree;
+
 window.onload = function () {
-	let mql = window.matchMedia("(orientation: portrait)");
-	orientation = (mql.matches) ? "portrait" : "landscape";
+	degree = window.orientation;	
+	setOrientation();
+}
+
+function setOrientation () {
+	let heightTest = test.clientHeight;
+	let widthTest  = test.clientWidth;
+	if (!degree) {
+		for (let i = 0; i < fields.length; i++) {
+			fields[i].style.display = "none";
+		}
+		fields[0].style.display = "flex";
+
+		let width = Math.round(Math.min(heightTest, widthTest) / 5);
+		for (let i = 0; i < elements.length; i++) {
+			elements[i].style.width = width + 'px';
+		  	elements[i].style.height = width + 'px';
+		}
+		
+	} else {
+		for (let i = 0; i < fields.length; i++) {
+			fields[i].style.display = "none";
+		}
+		fields[1].style.display = "flex";
+		let height = Math.round(Math.min(heightTest, widthTest) / 6);
+	  	for (let i = 0; i < elements.length; i++) {
+			elements[i].style.width  = height + 'px';
+			elements[i].style.height = height + 'px';
+	  	}
+	}
+
+}
+
+window.addEventListener('orientationchange', function () {
+	degree = window.orientation;
+	setOrientation();
+})
+
+/*
+window.onload = function () {
 	setOrientation();
 }
 
@@ -15,24 +55,18 @@ window.addEventListener('orientationchange', function () {
 	setOrientation();
 })
 
-function remove() {
-	fields[0].classList.remove('nonActive');
-}
 
 function setOrientation (params) {
-	let mql = window.matchMedia("(orientation: portrait)");
-	orientation = (mql.matches) ? "portrait" : "landscape";
-
-	if (orientation == "portrait") {
+	if (mql.matches) {
 		for (let i = 0; i < fields.length; i++) {
-			fields[i].classList.remove('Active');
+			fields[i].style.display = "none";
 		}
-		fields[0].classList.add('Active');		
+		fields[0].style.display = "flex"
 	} else {
 		for (let i = 0; i < fields.length; i++) {
-			fields[i].classList.remove('Active');
+			fields[i].style.display = "none";
 		}
-		fields[1].classList.add('Active');		
+		fields[1].style.display = "flex";
 	}
 
 	let heightTest = test.clientHeight;
@@ -50,7 +84,7 @@ function setOrientation (params) {
 			elements[i].style.height = height + 'px';
 	  	}
 	}	
-}
+}*/
 
 /*
 window.addEventListener('orientationchange', function () {
