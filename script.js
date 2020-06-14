@@ -4,6 +4,16 @@ let test = document.querySelector('.test');
 
 let fields = document.querySelectorAll('.field');
 
+
+window.addEventListener("orientationchange", function() {
+	if (window.orientation == 90) {
+		test.classList.add('rotateLandscape');
+	} else if (window.orientation == -90) {
+		test.classList.add('rotateLandscape');
+	}
+
+}, false);
+
 /*
 let timerId = setTimeout(function stick() {
 	if (!mql.matches) {
@@ -24,7 +34,7 @@ window.addEventListener("orientationchange", function() {
 		test.classList.add('rotateLandscape');
 	}
 }, false);*/
-
+/*
 window.addEventListener("resize", function() {
 	let height = document.documentElement.clientHeight;
 	let width = document.documentElement.clientWidth;
@@ -36,7 +46,7 @@ window.addEventListener("resize", function() {
 		test.classList.add('rotatePortrait');
 	}
 
-}, false);
+}, false);*/
 /*
 let timerId = setTimeout(function stick() {
   let test = document.querySelector('.test');

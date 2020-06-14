@@ -14,6 +14,13 @@
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
+.rotateLandscapeLeft {
+  animation-name: rotationLandscapeLeft;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
 .rotatePortrait {
   animation-name: rotationPortrait;
   animation-duration: 0.4s;
@@ -27,6 +34,14 @@
   }
   100% {
     transform: rotate(90deg);
+  }
+}
+@keyframes rotationLandscapeLeft {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-90deg);
   }
 }
 @keyframes rotationPortrait {
