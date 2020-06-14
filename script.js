@@ -1,10 +1,43 @@
 let elements = document.querySelectorAll('.element');
 let container = document.querySelector('.container');
-let mql = window.matchMedia("(orientation: portrait)");
+let test = document.querySelector('.test');
 
 let fields = document.querySelectorAll('.field');
 
+/*
+let timerId = setTimeout(function stick() {
+	if (!mql.matches) {
+		test.classList.add('rotateLandscape');
+	} else {
+		test.classList.add('rotatePortrait');
+	}
+	timerId = setTimeout(stick, 1000);
+})*/
 
+// Прослушка события смены ориентации
+/*
+window.addEventListener("orientationchange", function() {
+    // Выводим числовое значение ориентации
+	//alert(window.orientation);
+	let mql = window.matchMedia("(orientation: landscape)");
+	if (mql.matches) {
+		test.classList.add('rotateLandscape');
+	}
+}, false);*/
+
+window.addEventListener("resize", function() {
+	let height = document.documentElement.clientHeight;
+	let width = document.documentElement.clientWidth;
+	if (height < width) { //landscape
+		test.classList.remove('rotatePortrait');
+		test.classList.add('rotateLandscape');
+	} else {
+		test.classList.remove('rotateLandscape');
+		test.classList.add('rotatePortrait');
+	}
+
+}, false);
+/*
 let timerId = setTimeout(function stick() {
   let test = document.querySelector('.test');
   if (test.clientWidth < 800) {
@@ -38,7 +71,7 @@ let timerId = setTimeout(function stick() {
 	}	  
   }
   timerId = setTimeout(stick, 1000);
-}, 1000)
+}, 1000)*/
 
 /*
 if (widthWindow < heightWindow) {

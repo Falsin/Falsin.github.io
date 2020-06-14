@@ -2,10 +2,45 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	//border: solid red 1px;
 }
 
 .test {
 	.size(100%, 90%);
+}
+
+.rotateLandscape {
+	animation-name: rotationLandscape;
+	animation-duration: 0.4s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+.rotatePortrait {
+	animation-name: rotationPortrait;
+	animation-duration: 0.4s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;	
+}
+
+@keyframes rotationLandscape {
+	50% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(90deg);
+	}
+}
+
+@keyframes rotationPortrait {
+	50% {
+		transform: rotate(90deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
 }
 
 .marginPadding(@padding, @margin) {
@@ -66,6 +101,7 @@ input {
 	justify-content: center;
 	align-items: center;
 	color: white;
+	.size(30px, 30px);
 }
 
 .nonActive {
