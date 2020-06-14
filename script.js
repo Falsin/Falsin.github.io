@@ -1,10 +1,64 @@
+let orientation; 
 let elements = document.querySelectorAll('.element');
 let container = document.querySelector('.container');
 let mql = window.matchMedia("(orientation: portrait)");
-
+let test = document.querySelector('.test');
 let fields = document.querySelectorAll('.field');
 
+window.onload = function () {
+	let mql = window.matchMedia("(orientation: portrait)");
+	orientation = (mql.matches) ? "portrait" : "landscape";
+	setOrientation();
+}
 
+window.addEventListener('orientationchange', function () {
+	setOrientation();
+})
+
+function remove() {
+	fields[0].classList.remove('nonActive');
+}
+
+function setOrientation (params) {
+	let mql = window.matchMedia("(orientation: portrait)");
+	orientation = (mql.matches) ? "portrait" : "landscape";
+
+	if (orientation == "portrait") {
+		for (let i = 0; i < fields.length; i++) {
+			fields[i].classList.remove('Active');
+		}
+		fields[0].classList.add('Active');		
+	} else {
+		for (let i = 0; i < fields.length; i++) {
+			fields[i].classList.remove('Active');
+		}
+		fields[1].classList.add('Active');		
+	}
+
+	let heightTest = test.clientHeight;
+	let widthTest  = test.clientWidth;
+	if (widthTest  < heightTest) {
+		let width = Math.round(widthTest / 5);
+		for (let i = 0; i < elements.length; i++) {
+			elements[i].style.width = width + 'px';
+		  	elements[i].style.height = width + 'px';
+		}
+	} else {
+		let height = Math.round(heightTest / 6);
+	  	for (let i = 0; i < elements.length; i++) {
+			elements[i].style.width  = height + 'px';
+			elements[i].style.height = height + 'px';
+	  	}
+	}	
+}
+
+/*
+window.addEventListener('orientationchange', function () {
+
+})*/
+
+
+/*
 let timerId = setTimeout(function stick() {
   let test = document.querySelector('.test');
   if (test.clientWidth < 800) {
@@ -38,7 +92,7 @@ let timerId = setTimeout(function stick() {
 	}	  
   }
   timerId = setTimeout(stick, 1000);
-}, 1000)
+}, 1000);*/
 
 /*
 if (widthWindow < heightWindow) {
