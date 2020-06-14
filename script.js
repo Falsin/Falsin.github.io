@@ -1,53 +1,10 @@
 let elements = document.querySelectorAll('.element');
 let container = document.querySelector('.container');
-let test = document.querySelector('.test');
+let mql = window.matchMedia("(orientation: portrait)");
 
 let fields = document.querySelectorAll('.field');
 
 
-window.addEventListener("orientationchange", function() {
-	if (window.orientation == 90) {
-		test.classList.add('rotateLandscape');
-	} else if (window.orientation == -90) {
-		test.classList.add('rotateLandscape');
-	}
-
-}, false);
-
-/*
-let timerId = setTimeout(function stick() {
-	if (!mql.matches) {
-		test.classList.add('rotateLandscape');
-	} else {
-		test.classList.add('rotatePortrait');
-	}
-	timerId = setTimeout(stick, 1000);
-})*/
-
-// Прослушка события смены ориентации
-/*
-window.addEventListener("orientationchange", function() {
-    // Выводим числовое значение ориентации
-	//alert(window.orientation);
-	let mql = window.matchMedia("(orientation: landscape)");
-	if (mql.matches) {
-		test.classList.add('rotateLandscape');
-	}
-}, false);*/
-/*
-window.addEventListener("resize", function() {
-	let height = document.documentElement.clientHeight;
-	let width = document.documentElement.clientWidth;
-	if (height < width) { //landscape
-		test.classList.remove('rotatePortrait');
-		test.classList.add('rotateLandscape');
-	} else {
-		test.classList.remove('rotateLandscape');
-		test.classList.add('rotatePortrait');
-	}
-
-}, false);*/
-/*
 let timerId = setTimeout(function stick() {
   let test = document.querySelector('.test');
   if (test.clientWidth < 800) {
@@ -81,7 +38,7 @@ let timerId = setTimeout(function stick() {
 	}	  
   }
   timerId = setTimeout(stick, 1000);
-}, 1000)*/
+}, 1000)
 
 /*
 if (widthWindow < heightWindow) {
@@ -108,7 +65,6 @@ let nav  			 = document.querySelectorAll('.nav');
 let calculator 		 = document.querySelectorAll('.calculator');
 let bla				 = document.querySelectorAll('.bla');
 let table			 = document.querySelectorAll('table');
-
 let inputs 			 = document.querySelectorAll('input');
 let numbers 		 = document.querySelectorAll('.number');
 let mathOperator 	 = document.querySelectorAll('.mathOperator');
@@ -118,7 +74,6 @@ let Deletes 		 = document.querySelectorAll('.Delete');
 let dots 			 = document.querySelectorAll('.dot');
 let percents 		 = document.querySelectorAll('.percent');
 let additiveInverses = document.querySelectorAll('.additiveInverse');
-
 let squared			 = document.querySelector('.squared');
 let cubed 			 = document.querySelector('.cubed');
 let power 			 = document.querySelector('.power');
@@ -134,100 +89,69 @@ let e 				 = document.querySelector('.e');
 let PI				 = document.querySelector('.PI');
 let fraction		 = document.querySelector('.fraction');
 let powerDec		 = document.querySelector('.powerDec');
-
-
 let array 			 = [];
 let number 			 = "";
 let percentActive 	 = true;
 let powerTrue		 = false;
 let numberPow;  
-
 if (document.documentElement.clientWidth < 500) {
 	container.className = 'standartContainer';
 }
-
 for (let i of nav) {
 	i.addEventListener("mousedown", () => pressNav(i));
 }
-
 for (const i of numbers) {
 	i.addEventListener("mousedown", function (e) { 
 		pressNumbers(e.target.textContent)
 	});
 }
-
 for (const i of mathOperator) {
 	i.addEventListener('mousedown', function(e) {
 		pressOperations(e.target.textContent);
 	});
 }
-
 for (const i of equals) {
 	i.addEventListener('mousedown', pressEquals);
 }
-
 for (const i of cancels) {
 	i.addEventListener('mousedown', pressCancel);
 }
-
 for (const i of Deletes) {
 	i.addEventListener('mousedown', pressDeletes)
 }
-
 for (const i of dots) {
 	i.addEventListener('mousedown', pressDots)
 }
-
 for (const i of percents) {
 	i.addEventListener('mousedown', pressPercents);
 }
-
 for (const i of additiveInverses) {
 	i.addEventListener('mousedown', pressAdditiveInverses);
 }
-
 let pw = pressPower();
-
 cubicRoot.addEventListener('mousedown', () => knownPow(1/3));
-
 cubed.addEventListener('mousedown', () => knownPow(3));
-
 root.addEventListener('mousedown', () => knownPow(0.5))
-
 squared.addEventListener('mousedown', () => knownPow(2));
-
 power.addEventListener('mousedown', pw);
-
 natLog.addEventListener('mousedown', pressNatLog);
-
 decLog.addEventListener('mousedown', pressDecLog);
-
 factorial.addEventListener('mousedown', () => pressFac(inputs[0].value)); 
-
 sin.addEventListener('mousedown', () => pressSin(inputs[0].value));
-
 cos.addEventListener('mousedown', () => pressCos(inputs[0].value));
-
 tan.addEventListener('mousedown', () => pressTan(inputs[0].value));
-
 e.addEventListener('mousedown', () => pressE(inputs[0].value));
-
 PI.addEventListener('mousedown', pressPI);
-
 fraction.addEventListener('mousedown', pressFraction);
-
 powerDec.addEventListener('mousedown', () => pressPowerDec(inputs[0].value));
-
 function pressNav(arg) {
 	for (let i = 0; i < nav.length; i++) {
 		nav[i].classList.remove('active');
 		calculator[i].classList.remove('activeCalc');
 	}
-
 	let id = [...nav].indexOf(arg);
 	calculator[id].classList.add('activeCalc');
 	arg.classList.add('active');
-
 	if (id == 1) {
 		container.className = 'extendedContainer';
 		navDiv.style.width = 24 + "vw";
@@ -236,39 +160,30 @@ function pressNav(arg) {
 		navDiv.style.width = 24 + "vw";
 	}
 }
-
 function pressAdditiveInverses(arg) {
 	number = -1 * number;
 	Iterations(inputs, -1);
 }
-
 function pressNumbers(arg) {
 	if (inputs[0].value == '0' || number == '') {
 		Iterations(inputs, '', true);
 	}
-
 	if (inputs[0].value.length < 13) {
 		Iterations(inputs, arg, false)
 		number = inputs[0].value;
 	}
 }
-
 function pressOperations(arg) {
 	if (typeof array[array.length - 1] == "array") {
-
 	}
-
 	if (powerTrue) {
 		powFunct();
 	}
-
 	if (!(number === "")) {
 		array.push(number);
 	}
-
 	number = "";
 	let result = array[array.length - 1];
-
 	if (!isNaN(result)) {
 		array.push(arg);
 	} else {
@@ -276,7 +191,6 @@ function pressOperations(arg) {
 	}
 	percentActive = true;
 }
-
 function pressPower () {
 	let localNumber;
 	return function () {
@@ -288,10 +202,8 @@ function pressPower () {
 		powerTrue = true;			
 	}		
 }
-
 function powFunct() {
 	n = inputs[0].value;
-
 	if (numberPow === undefined) {
 		number = pw() ** n;
 		numberPow = number;
@@ -305,7 +217,6 @@ function powFunct() {
 	powerTrue = false;
 	return numberInput;
 }
-
 function pressEquals() {
 	if ((array.length < 3 && number === "" || array.length < 2) && !powerTrue) {
 		return;
@@ -314,9 +225,7 @@ function pressEquals() {
 	if (powerTrue) {
 		count = powFunct();
 	}
-
 	array.push(number);
-
 	for (let i = 0; i < array.length - 1;) {
 		if (array[i + 1] == "×") {
 			count = array[i] * array[i + 2];
@@ -328,7 +237,6 @@ function pressEquals() {
 			i+=2;
 		}
 	}
-
 	for (let j = 0; j < array.length - 1;) {
 		if (array[j + 1] == "+") {
 			count = +array[j] + +array[j + 2];
@@ -345,14 +253,12 @@ function pressEquals() {
 	roundNumber();
 	array = [];
 }
-
 function pressCancel() {
 	array	= [];
 	number 	= '';
 	numberPow = undefined;
 	Iterations(inputs, '0', true);
 }
-
 function pressDeletes() {
 	Iterations(inputs, inputs[0].value.slice(0, -1), true);
 	if (inputs[0].value.length < 1) {
@@ -360,14 +266,12 @@ function pressDeletes() {
 	}
 	number = inputs[0].value;
 }
-
 function pressDots() {
 	let string = inputs[0].value;
 	if (string.length < 13 && !string.includes('.')) {
 		Iterations(inputs, ".", false);
 	}
 }
-
 function pressPercents(arg) {
 	if (percentActive) {
 		let value = inputs[0].value / 100;
@@ -387,69 +291,55 @@ function pressPercents(arg) {
 	}
 	percentActive = false;
 }
-
 function knownPow(arg) {
 	number = (number ** arg).toPrecision(8);
 	roundNumber()
 }
-
 function pressPowerDec(arg) {
 	number = (10 ** arg).toPrecision(8);
 	roundNumber()
 }
-
 function pressNatLog() {
 	number = (Math.log(inputs[0].value)).toPrecision(8);
 	Iterations(inputs, number, true);
 }
-
 function pressDecLog() {
 	number = (Math.log10(inputs[0].value)).toPrecision(8);
 	Iterations(inputs, number, true);
 }
-
 let rec = arg => (arg == 1) ? 1 : arg * rec(arg - 1);
-
 function pressFac(arg) {
 	number = rec(arg).toPrecision(8);
 	roundNumber()
 }
-
 function pressSin(arg) {
 	number = Math.sin((arg * Math.PI/180)).toPrecision(8);
 	roundNumber()
 }
-
 function pressCos(arg) {
 	number = Math.cos((arg * Math.PI/180)).toPrecision(8);
 	roundNumber()
 }
-
 function pressTan(arg) {
 	number = Math.tan((arg * Math.PI/180)).toPrecision(8);
 	roundNumber()	
 }
-
 function pressE() {
 	number = (Math.E).toPrecision(8);
 	roundNumber();
 }
-
 function pressPI() {
 	number = (Math.PI).toPrecision(8);
 	roundNumber();	
 }
-
 function roundNumber() {
 	if (number.length < 12) number = parseFloat(number);
 	Iterations(inputs, number, true);	
 }
-
 function pressFraction() {
 	number = (1/inputs[0].value).toPrecision(8);
 	roundNumber();	
 }
-
 function Iterations(array, arg, assign) {
 	for (let i of array) {
 		if (arg == -1) {
@@ -459,7 +349,6 @@ function Iterations(array, arg, assign) {
 		}
 	}
 }
-
 if (document.documentElement.clientWidth < 800) {
 	let timerId = setTimeout(function stick() {
 		//console.log(document.documentElement.clientHeight);
@@ -467,9 +356,7 @@ if (document.documentElement.clientWidth < 800) {
 		timerId = setTimeout(stick, 1000);
 	}, 1000)
 }
-
 let grid = document.querySelectorAll('.grid'); // new
-
 window.addEventListener('orientationchange', function () {
 	if (window.orientation > 0 || window.orientation < 0) {
 		navDiv.style.display = 'none';
@@ -478,7 +365,6 @@ window.addEventListener('orientationchange', function () {
 		calculator[1].style.height = '100%';
 		calculator[1].style.width = '100%';
 		//let height = bla[0].clientHeight / 1.6;
-
 		for (let i = 0; i < calculator.length; i++) {
 			calculator[i].classList.remove('activeCalc');
 		}
@@ -486,7 +372,6 @@ window.addEventListener('orientationchange', function () {
 		let heightGrid = Math.round(grid[1].clientHeight / 10); // new
 		console.log(heightGrid)	
 		for (let i = 20; i < bla.length; i++) {
-
 			bla[i].style.paddingTop = '0';
 			bla[i].style.paddingBottom = '0';
 		}

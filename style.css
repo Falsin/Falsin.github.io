@@ -7,51 +7,6 @@
   width: 100%;
   height: 90%;
 }
-.rotateLandscape {
-  animation-name: rotationLandscape;
-  animation-duration: 0.4s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-.rotateLandscapeLeft {
-  animation-name: rotationLandscapeLeft;
-  animation-duration: 0.4s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-.rotatePortrait {
-  animation-name: rotationPortrait;
-  animation-duration: 0.4s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-@keyframes rotationLandscape {
-  50% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(90deg);
-  }
-}
-@keyframes rotationLandscapeLeft {
-  50% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-90deg);
-  }
-}
-@keyframes rotationPortrait {
-  50% {
-    transform: rotate(90deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
 html,
 body {
   width: 100%;
@@ -98,8 +53,6 @@ input {
   justify-content: center;
   align-items: center;
   color: white;
-  width: 30px;
-  height: 30px;
 }
 .nonActive {
   display: none;
@@ -109,17 +62,14 @@ input {
 	margin: 0;
 	box-sizing: border-box;
 }
-
 .marginPadding(@padding, @margin) {
 	padding: @padding,;
 	margin: @margin;
 }
-
 .size(@width, @height) {
 	width: @width;
 	height: @height;
 }
-
 nav {
 	display: flex;
 	background: #1DD300;
@@ -127,7 +77,6 @@ nav {
 	text-align: center;
 	position: relative;
 }
-
 nav div {
 	justify-content: center;
 	align-items: center;
@@ -136,16 +85,13 @@ nav div {
 	padding-top: 0.5vw;
 	padding-bottom: 0.5vw;
 }
-
 nav div:not(:last-child) {
 	border-right: 1px solid #033333;
 	vertical-align: middle;
 }
-
 .active {
 	box-shadow: inset 0 -8px 8px 0 yellow;
 }
-
 body {
 	.size(auto, 100%);
 	display: flex;
@@ -154,26 +100,21 @@ body {
 	color: white;
 	background: #033333;
 }
-
 #container {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-
 .standartContainer {
 	width: 24vw;
 }
-
 .extendedContainer {
 	width: 34vw;
 }
-
 .calculator {
 	display: none;
 }
-
 .standart,
 .extended {
 	height: 35vw;
@@ -183,16 +124,13 @@ body {
 	width: 100%;
 	background: black;
 }
-
 .activeCalc {
 	display: flex;
 }
-
 form {
 	.size(100%, 10%);
 	display: flex;
 }
-
 form input {
 	font-size: 3vw;
 	color: white;
@@ -203,7 +141,6 @@ form input {
 	width: 100%;
 	background: black;
 }
-
 .standart .grid {
 	display: grid;
 	grid-template-areas: 
@@ -212,43 +149,35 @@ form input {
 		"nine ten eleven twelve"
 		"thirteen fourteen fifteen sixteen"
 		"seventeen eighteen nineteen twenty";
-
 	&-cancel {grid-area: one;}
 	&-delete {grid-area: two;}
 	&-percent {grid-area: three;}
 	&-divide {grid-area: four;}
-
 	&-seven {grid-area: five;}
 	&-eight {grid-area: six;}
 	&-nine {grid-area: seven;}
 	&-times {grid-area: eight;}
-
 	&-four {grid-area: nine;}
 	&-five {grid-area: ten;}
 	&-six {grid-area: eleven;}
 	&-minus {grid-area: twelve;}
-
 	&-one {grid-area: thirteen;}
 	&-two {grid-area: fourteen;}
 	&-three {grid-area: fifteen;}
 	&-plus {grid-area: sixteen;}
-
 	&-additiveInverse {grid-area: seventeen;}
 	&-zero {grid-area: eighteen;}
 	&-dot {grid-area: nineteen;}
 	&-equals {grid-area: twenty;}
-
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 0.5vw;
 	grid-template-rows: repeat(5, auto);
 }
-
 .grid {
 	background: black;
 	flex-grow: 2;
 	.size(100%, 90%);
 }
-
 .grid div {
 	cursor: pointer;
 	position: relative;
@@ -257,8 +186,6 @@ form input {
     display: flex;
     justify-content: center;	
 }
-
-
 .grid div span {
 	display: inline-block;
 	background: green;
@@ -268,7 +195,6 @@ form input {
 	vertical-align: middle;
 	line-height: 100%;
 }
-
 table {
 	width: 100%;
 	height: 100%;
@@ -276,7 +202,6 @@ table {
 	background: #333333;
 	border-radius: 50%;
 }
-
 .extended .grid {
 	padding: 0.5vw;
 	display: grid;
@@ -286,7 +211,6 @@ table {
 		"power natLog decLog nine ten eleven twelve"
 		"factorial sin cos thirteen fourteen fifteen sixteen"
 		"tan e PI seventeen eighteen nineteen twenty";
-
 	&-fraction {grid-area: fraction;}
 	&-powerDec {grid-area: powerDec;}
 	&-squared {grid-area: squared;}
@@ -294,7 +218,6 @@ table {
 	&-Delete {grid-area: two;}
 	&-percent {grid-area: three;}
 	&-divide {grid-area: four;}
-
 	&-root {grid-area: root;}
 	&-cubed {grid-area: cubed;}
 	&-cubicRoot {grid-area: cubicRoot;}
@@ -302,7 +225,6 @@ table {
 	&-eight {grid-area: six;}
 	&-nine {grid-area: seven;}
 	&-times {grid-area: eight;}
-
 	&-power {grid-area: power;}
 	&-natLog {grid-area: natLog;}
 	&-decLog {grid-area: decLog;}
@@ -310,7 +232,6 @@ table {
 	&-five {grid-area: ten;}
 	&-six {grid-area: eleven;}
 	&-minus {grid-area: twelve;}
-
 	&-factorial {grid-area: factorial;}
 	&-sin {grid-area: sin;}
 	&-cos {grid-area: cos;}
@@ -318,7 +239,6 @@ table {
 	&-two {grid-area: fourteen;}
 	&-three {grid-area: fifteen;}
 	&-plus {grid-area: sixteen;}
-
 	&-tan {grid-area: tan;}
 	&-e {grid-area: e;}
 	&-PI {grid-area: PI;}
@@ -326,16 +246,13 @@ table {
 	&-zero {grid-area: eighteen;}
 	&-dot {grid-area: nineteen;}
 	&-equals {grid-area: twenty;}
-
 	grid-template-columns: repeat(7, 1fr);
 	grid-gap: 0.5vw;
 	grid-template-rows: repeat(5, auto);
 }
-
 html {
 	.size(auto, 100%);
 }
-
 @media screen and (max-width: 1600px) {
 	.standartContainer {
 		width: 24vw;
@@ -347,7 +264,6 @@ html {
 		height: 35vw;
 	}
 }
-
 @media screen and (max-width: 1200px) {
 	.standartContainer {
 		width: 30vw;
@@ -359,7 +275,6 @@ html {
 		height: 41vw;
 	}
 }
-
 @media screen and (max-width: 800px) {
 	.standartContainer {
 		width: 36vw;
@@ -371,16 +286,13 @@ html {
 		height: 47vw;
 	}
 }
-
 @media screen and (max-width: 500px) {
 	.standartContainer {
 		.size(100%, 100%);
 	}
-
 	.standart {
 		.size(100%, 100%);
 	}
-
 	.calculator .grid {
 		grid-gap: 10px;
 		padding: 1vw;
@@ -389,7 +301,6 @@ html {
 	nav {
 		display: none;
 	}
-
 	form input {
 		height: 100%;
 		font-size: 9vw;
@@ -399,7 +310,6 @@ html {
 		font-size: 7vw;
 	}
 }
-
 @media screen and (min-width: 500px) {
 	nav div {
 		width: calc(100% / 4);
