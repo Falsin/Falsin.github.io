@@ -22,7 +22,7 @@ function setOrientation () {
 		}
 		fields[0].style.display = "flex";
 
-		let width = Math.round(Math.min(heightTest, widthTest) / 5);
+		let width = Math.round(Math.min(heightTest, widthTest) / 5.5);
 		for (let i = 0; i < elements.length; i++) {
 			elements[i].style.width = width + 'px';
 		  	elements[i].style.height = width + 'px';
@@ -33,7 +33,7 @@ function setOrientation () {
 			fields[i].style.display = "none";
 		}
 		fields[1].style.display = "flex";
-		let height = Math.round(Math.min(heightTest, widthTest) / 6);
+		let height = Math.round(Math.min(heightTest, widthTest) / 6.5);
 	  	for (let i = 0; i < elements.length; i++) {
 			elements[i].style.width  = height + 'px';
 			elements[i].style.height = height + 'px';
