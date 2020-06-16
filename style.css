@@ -12,9 +12,9 @@ body {
   width: 100%;
   height: 100%;
 }
-body {
-  font-size: 25px;
-}
+/* body {
+	font-size: 25px;
+} */
 .container {
   width: 100%;
   height: 100%;
@@ -53,6 +53,16 @@ input {
   justify-content: center;
   align-items: center;
   color: white;
+}
+@media screen and (orientation: portrait) {
+  body {
+    font-size: 5vh;
+  }
+}
+@media screen and (orientation: landscape) {
+  body {
+    font-size: 7vh;
+  }
 }
 /*@media screen and (orientation:portrait) {
 	.portrait {
