@@ -49,108 +49,6 @@ window.addEventListener('orientationchange', function () {
 	setTimeout(setOrientation, 50);
 })
 
-/*
-window.onload = function () {
-	setOrientation();
-}
-
-window.addEventListener('orientationchange', function () {
-	setOrientation();
-})
-
-
-function setOrientation (params) {
-	if (mql.matches) {
-		for (let i = 0; i < fields.length; i++) {
-			fields[i].style.display = "none";
-		}
-		fields[0].style.display = "flex"
-	} else {
-		for (let i = 0; i < fields.length; i++) {
-			fields[i].style.display = "none";
-		}
-		fields[1].style.display = "flex";
-	}
-
-	let heightTest = test.clientHeight;
-	let widthTest  = test.clientWidth;
-	if (widthTest  < heightTest) {
-		let width = Math.round(widthTest / 5);
-		for (let i = 0; i < elements.length; i++) {
-			elements[i].style.width = width + 'px';
-		  	elements[i].style.height = width + 'px';
-		}
-	} else {
-		let height = Math.round(heightTest / 6);
-	  	for (let i = 0; i < elements.length; i++) {
-			elements[i].style.width  = height + 'px';
-			elements[i].style.height = height + 'px';
-	  	}
-	}	
-}*/
-
-/*
-window.addEventListener('orientationchange', function () {
-
-})*/
-
-
-/*
-let timerId = setTimeout(function stick() {
-  let test = document.querySelector('.test');
-  if (test.clientWidth < 800) {
-
-	if (mql.matches) {
-	  for (let i = 0; i < fields.length; i++) {
-		fields[i].classList.add('nonActive');
-	  }
-	  fields[0].classList.remove('nonActive');
-	} else {
-	  for (let i = 0; i < fields.length; i++) {
-		fields[i].classList.add('nonActive');
-	  }
-	  fields[1].classList.remove('nonActive');		
-	}
-
-	let heightTest = test.clientHeight;
-	let widthTest  = test.clientWidth;
-	if (widthTest  < heightTest) {
-		let width = Math.round(widthTest / 5);
-		for (let i = 0; i < elements.length; i++) {
-			elements[i].style.width = width + 'px';
-		  	elements[i].style.height = width + 'px';
-		}
-	} else {
-		let height = Math.round(heightTest / 6);
-	  	for (let i = 0; i < elements.length; i++) {
-			elements[i].style.width  = height + 'px';
-			elements[i].style.height = height + 'px';
-	  	}
-	}	  
-  }
-  timerId = setTimeout(stick, 1000);
-}, 1000);*/
-
-/*
-if (widthWindow < heightWindow) {
-  for (let i = 0; i < elements.length; i++) {
-    let width = Math.round(widthWindow / 5);
-    elements[i].style.width = width + 'px';
-    elements[i].style.height = width + 'px';
-    console.log(elements[i].style.width)
-  }
-} else {
-  for (let i = 0; i < elements.length; i++) {
-    let height = Math.round(heightWindow / 6);
-    elements[i].style.width  = height + 'px';
-    elements[i].style.height = height + 'px';
-    console.log(elements[i].clientHeight);
-    console.log(elements[i].clientWidth);
-  }
-}*/
-
-/*
-let container		 = document.getElementById('container');
 let navDiv 			 = document.querySelector('nav');
 let nav  			 = document.querySelectorAll('.nav');
 let calculator 		 = document.querySelectorAll('.calculator');
@@ -235,22 +133,7 @@ e.addEventListener('mousedown', () => pressE(inputs[0].value));
 PI.addEventListener('mousedown', pressPI);
 fraction.addEventListener('mousedown', pressFraction);
 powerDec.addEventListener('mousedown', () => pressPowerDec(inputs[0].value));
-function pressNav(arg) {
-	for (let i = 0; i < nav.length; i++) {
-		nav[i].classList.remove('active');
-		calculator[i].classList.remove('activeCalc');
-	}
-	let id = [...nav].indexOf(arg);
-	calculator[id].classList.add('activeCalc');
-	arg.classList.add('active');
-	if (id == 1) {
-		container.className = 'extendedContainer';
-		navDiv.style.width = 24 + "vw";
-	} else if (id == 0) {
-		container.className = 'standartContainer';
-		navDiv.style.width = 24 + "vw";
-	}
-}
+
 function pressAdditiveInverses(arg) {
 	number = -1 * number;
 	Iterations(inputs, -1);
@@ -440,13 +323,14 @@ function Iterations(array, arg, assign) {
 		}
 	}
 }
+/*
 if (document.documentElement.clientWidth < 800) {
 	let timerId = setTimeout(function stick() {
-		//console.log(document.documentElement.clientHeight);
 		container.style.height = document.documentElement.clientHeight;
 		timerId = setTimeout(stick, 1000);
 	}, 1000)
-}
+}*/
+/*
 let grid = document.querySelectorAll('.grid'); // new
 window.addEventListener('orientationchange', function () {
 	if (window.orientation > 0 || window.orientation < 0) {
@@ -476,3 +360,21 @@ window.addEventListener('orientationchange', function () {
 		calculator[0].classList.add('activeCalc');	
 	}
 })*/
+
+/*
+function pressNav(arg) {
+	for (let i = 0; i < nav.length; i++) {
+		nav[i].classList.remove('active');
+		calculator[i].classList.remove('activeCalc');
+	}
+	let id = [...nav].indexOf(arg);
+	calculator[id].classList.add('activeCalc');
+	arg.classList.add('active');
+	if (id == 1) {
+		container.className = 'extendedContainer';
+		navDiv.style.width = 24 + "vw";
+	} else if (id == 0) {
+		container.className = 'standartContainer';
+		navDiv.style.width = 24 + "vw";
+	}
+}*/
