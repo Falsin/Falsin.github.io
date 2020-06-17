@@ -52,12 +52,11 @@ window.addEventListener('orientationchange', function () {
 let navDiv 			 = document.querySelector('nav');
 let nav  			 = document.querySelectorAll('.nav');
 let calculator 		 = document.querySelectorAll('.calculator');
-let bla				 = document.querySelectorAll('.bla');
 let table			 = document.querySelectorAll('table');
 let inputs 			 = document.querySelectorAll('input');
 let numbers 		 = document.querySelectorAll('.number');
 let mathOperator 	 = document.querySelectorAll('.mathOperator');
-let equals 			 = document.querySelectorAll('.grid-equals');
+let equals 			 = document.querySelectorAll('.equals');
 let cancels 		 = document.querySelectorAll('.cancel');
 let Deletes 		 = document.querySelectorAll('.Delete');
 let dots 			 = document.querySelectorAll('.dot');
