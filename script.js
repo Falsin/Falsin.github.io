@@ -83,9 +83,10 @@ let number 			 = "";
 let percentActive 	 = true;
 let powerTrue		 = false;
 let numberPow;  
+/*
 if (document.documentElement.clientWidth < 500) {
 	container.className = 'standartContainer';
-}
+}*/
 for (let i of nav) {
 	i.addEventListener("mousedown", () => pressNav(i));
 }
