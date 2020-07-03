@@ -43,6 +43,42 @@ input {
 	padding-left: 5%;
 }
 
+label[for="menu"] {
+	position: absolute;
+	top: 1%;
+	left: 5%;
+	height: 8%;
+	background: #F2A30F;
+	border-radius: 50%;
+	opacity: 0.5;
+	z-index: 2; 	
+}
+
+#menu {
+	display: none;
+}
+
+.carpet {
+	display: none;
+	position: absolute;
+	background: #0742F2;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: .8;
+	align-items: center;
+	justify-content: center;
+}
+
+ul {
+	list-style-type: none;
+	color: white;
+}
+
+#menu:checked ~ .carpet {
+	display: flex;
+}
+
 .field {
 	.size(100%, 100%);
 	display: flex;
@@ -53,6 +89,40 @@ input {
 .line {
 	display: flex;
 	justify-content: space-around;
+}
+
+#list span {
+	position: relative;
+}
+
+#list span:before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 1px;
+	background: red;
+	transition: width 1s;
+}
+
+#list #item1:checked ~ label[for="item1"] span:before,
+#list #item2:checked ~ label[for="item2"] span:before,
+#list #item3:checked ~ label[for="item3"] span:before {
+	width: 100%;
+}
+
+/* #list, #list * {
+	border: solid yellow 1px;
+}  */
+
+#list input {
+	display: none;
+}
+
+#list {
+	display: flex;
+	color: white;
 }
 
 .element {
@@ -71,14 +141,33 @@ input {
 	input {
 		font-size: 6vh;
 	}
+	ul * {
+		margin: 1vh;
+	}
+	#list label:not([for="item1"]) {
+		margin-top: 5vw;
+	}
+	#list {
+		flex-direction: column;
+	}
 }
 
 @media screen and (orientation:landscape) {
 	body {
 		font-size: 5vh;
 	}
-	input {
+	input, #list {
 		font-size: 7vh;
+	}
+	ul {
+		display: flex;
+	}
+	ul * {
+		font-size: 7vh;
+		margin: 1vw;
+	}
+	#list label:not([for="item1"]) {
+		margin-left: 5vh;
 	}
 } 
 

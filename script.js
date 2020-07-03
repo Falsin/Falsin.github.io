@@ -6,13 +6,27 @@ let test = document.querySelector('.test');
 let fields = document.querySelectorAll('.field');
 
 let degree;
+let label = document.querySelector('label');
+
+/* let links = document.querySelectorAll('a');
+let after = document.querySelectorAll('a:active:after'); */
 
 window.onload = function () {
 	degree = window.orientation;	
 	setOrientation();
 }
 
+/* for (let i = 0; i < links.length; i++) {
+	links[i].addEventListener('mousedown', function Animation() {
+		links[i].style.color = "red";
+	})
+}
+console.log(after[0]) */
+
 function setOrientation () {
+	let heightLabel = label.clientHeight;
+	label.style.width = heightLabel + 'px';
+
 	let heightTest = test.clientHeight;
 	let widthTest  = test.clientWidth;
 
