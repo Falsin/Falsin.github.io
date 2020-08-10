@@ -11,225 +11,105 @@
 		<meta name="mobile-web-app-capable" content="yes">		
 	</head>
 	<body>
+		<div class="menu">
+			<div class="menuNav active">Standart</div>
+			<div class="menuNav">Advanced</div>
+		</div>
 		<div class="container">
 			<form name="form">
-				<label for="menu"></label>
-				<input type="checkbox" id="menu">
 				<input type="text" value="0" readonly>
-				<div class="carpet">
-					<!-- 
-					1. Standart
-					2. Konventer
-					3. Programming mode -->
-					<div id="list">
-						<!-- <ul>
-							<li><a href="#">Standart mode</a></li>
-							<li><a href="#">Programming mode</a></li>
-							<li><a href="#">Сonverter</a></li>
-						</ul> -->
-						
-						<input type="radio" id="item1" name="item">
-						<input type="radio" id="item2" name="item">
-						<input type="radio" id="item3" name="item">
-						<label for="item1"><span>Standart mode</span></label>
-						<label for="item2"><span>Programming mode</span></label>
-						<label for="item3"><span>Сonverter</span></label>
-						
-						
-					</div>
-
-				</div>
 			</form>
 			<div class="test">
-				<div class="field">
-					<div class="line">
-						<div class="element service cancel">C</div>
-						<div class="element service Delete"><</div>
-						<div class="element service percent">%</div>
-						<div class="element mathOperator">÷</div>
-					</div>
-	
-					<div class="line">
-						<div class="element number">7</div>
-						<div class="element number">8</div>
-						<div class="element number">9</div>
-						<div class="element mathOperator">×</div>
-					</div>
-	
-					<div class="line">
-						<div class="element number">4</div>
-						<div class="element number">5</div>
-						<div class="element number">6</div>
-						<div class="element mathOperator">−</div>
-					</div>
-	
-					<div class="line">
-						<div class="element number">1</div>
-						<div class="element number">2</div>
-						<div class="element number">3</div>
-						<div class="element mathOperator">+</div>
-					</div>
-	
-					<div class="line">
-						<div class="element additiveInverse">+/-</div>
-						<div class="element number">0</div>
-						<div class="element dot">.</div>
-						<div class="element equals">=</div>
-					</div>
-				</div>
-
-				
-				<div class="field">
-					<div class="line">
-						<div class="element fraction ">1/x</div>
-						<div class="element powerDec ">10<sup>x</sup></div>
-						<div class="element squared ">x<sup>2<sup></div>
-						<div class="element service cancel ">C</div>
-						<div class="element service Delete "><</div>
-						<div class="element service percent ">%</div>
-						<div class="element mathOperator">÷</div>
-					</div>
-					<div class="line">
-						<div class="element root ">√x</div>
-						<div class="element cubed ">x<sup>3<sup></div>
-						<div class="element cubicRoot ">∛x</div>
-						<div class="element number">7</div>
-						<div class="element number">8</div>
-						<div class="element number">9</div>
-						<div class="element mathOperator">×</div>
-					</div>
-					<div class="line">
-						<div class="element power ">x<sup>n<sup></div>
-						<div class="element natLog ">ln</div>
-						<div class="element decLog ">log<sub>10</sub></div>
-						<div class="element number">4</div>
-						<div class="element number">5</div>
-						<div class="element number">6</div>
-						<div class="element mathOperator">−</div>
-					</div>
-					<div class="line">
-						<div class="element factorial ">n!</div>
-						<div class="element sin">sin</div>
-						<div class="element cos">cos</div>
-						<div class="element number">1</div>
-						<div class="element number">2</div>
-						<div class="element number">3</div>
-						<div class="element mathOperator">+</div>
-					</div>
-					<div class="line">
-						<div class="element tan">tan</div>
-						<div class="element e">e</div>
-						<div class="element PI">π</div>
-						<div class="element additiveInverse">+/-</div>
-						<div class="element number">0</div>
-						<div class="element dot">.</div>
-						<div class="element equals">=</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-		<!-- <div class="container extended nonActive">
-			<form name="form">
-				<input type="text" value="0" readonly>
-			</form>	 -->		
-			
-
-	
-
-		<script src="script.js"></script>
-		<!-- <div id ="container" class="standartContainer">
-			<nav>
-				<div class="active nav">Standart</div>
-				<div class="nav">Extended</div>
-				<div class="nav">Number system converter</div>
-				<div class="nav">Converter</div>
-			</nav>
-			<div class="standart activeCalc calculator">
-				<form name="form">
-					<input value="0" readonly></input>
-				</form>
-					<div class="grid">
-						<div class="service grid-cancel cancel bla">C</td></tr></table>
+				<div class="standartMode mode">
+					<div class="portrait orientation">
+						<div class="line">
+							<div class="element service cancel">C</div>
+							<div class="element service Delete"><</div>
+							<div class="element service percent">%</div>
+							<div class="element mathOperator">÷</div>
 						</div>
-						<div class="service grid-delete Delete bla"><</td></tr></table></div>
-						<div class="service grid-percent percent bla">%</td></tr></table></div>
-						<div class="mathOperator grid-divide bla">÷</td></tr></table></div>
-						<div class="number grid-seven bla">7</td></tr></table></div>
-						<div class="number grid-eight bla">8</td></tr></table></div>
-						<div class="number grid-nine bla">9</td></tr></table></div>
-						<div class="mathOperator grid-times bla">×</td></tr></table></div>
-						
-						
-						<div class="number grid-four bla">4</td></tr></table></div>
-						<div class="number grid-five bla">5</td></tr></table></div>
-						<div class="number grid-six bla">6</td></tr></table></div>
-						<div class="mathOperator grid-minus bla">−</td></tr></table></div>
-						
-						
-						<div class="number grid-one bla">1</td></tr></table></div>
-						<div class="number grid-two bla">2</td></tr></table></div>
-						<div class="number grid-three bla">3</td></tr></table></div>
-						<div class="mathOperator grid-plus bla">+</td></tr></table></div>
-
-
-						<div class="grid-additiveInverse additiveInverse bla">+/-</td></tr></table></div>
-						<div class="number grid-zero bla">0</td></tr></table></div>
-						<div class="grid-dot dot bla">.</td></tr></table></div>
-						<div class="grid-equals bla">=</td></tr></table></div>
+		
+						<div class="line">
+							<div class="element number">7</div>
+							<div class="element number">8</div>
+							<div class="element number">9</div>
+							<div class="element mathOperator">×</div>
+						</div>
+		
+						<div class="line">
+							<div class="element number">4</div>
+							<div class="element number">5</div>
+							<div class="element number">6</div>
+							<div class="element mathOperator">−</div>
+						</div>
+		
+						<div class="line">
+							<div class="element number">1</div>
+							<div class="element number">2</div>
+							<div class="element number">3</div>
+							<div class="element mathOperator">+</div>
+						</div>
+		
+						<div class="line">
+							<div class="element additiveInverse">+/−</div>
+							<div class="element number">0</div>
+							<div class="element dot">.</div>
+							<div class="element equals">=</div>
+						</div>
 					</div>
-			</div>
-			<div class="extended calculator">
-				<form name="form">
-					<input value="0" readonly></input>
-				</form>
-					<div class="grid">
-						<div class="grid-fraction fraction  bla">1/x</td></tr></table></div>
-						<div class="grid-powerDec powerDec  bla">10<sup>x</sup></td></tr></table></div>							
-						<div class="grid-squared squared  bla">x<sup>2<sup></td></tr></table></div>
-						<div class="service grid-cancel cancel  bla">C</td></tr></table></div>
-						<div class="service grid-delete Delete  bla"><</td></tr></table></div>
-						<div class="service grid-percent percent  bla">%</td></tr></table></div>
-						<div class="mathOperator grid-divide  bla">÷</td></tr></table></div>
+	
 					
-						<div class="grid-root root  bla">√x</td></tr></table></div>
-						<div class="grid-cubed cubed  bla">x<sup>3<sup></td></tr></table></div>
-						<div class="grid-cubicRoot cubicRoot  bla">∛x</td></tr></table></div>
-						<div class="number grid-seven  bla">7</td></tr></table></div>
-						<div class="number grid-eight  bla">8</td></tr></table></div>
-						<div class="number grid-nine  bla">9</td></tr></table></div>
-						<div class="mathOperator grid-times  bla">×</td></tr></table></div>
-				
-						<div class="grid-power power  bla">x<sup>n<sup></td></tr></table></div>
-						<div class="grid-natLog natLog  bla">ln</td></tr></table></div>
-						<div class="grid-decLog decLog  bla">log<sub>10</sub></td></tr></table></div>
-						<div class="number grid-four  bla">4</td></tr></table></div>
-						<div class="number grid-five  bla">5</td></tr></table></div>
-						<div class="number grid-six  bla">6</td></tr></table></div>
-						<div class="mathOperator grid-minus bla">−</td></tr></table></div>
+					<div class="landscape orientation">
+						<div class="line">
+							<div class="element fraction ">1/x</div>
+							<div class="element powerDec ">10<sup>x</sup></div>
+							<div class="element squared ">x<sup>2<sup></div>
+							<div class="element service cancel ">C</div>
+							<div class="element service Delete "><</div>
+							<div class="element service percent ">%</div>
+							<div class="element mathOperator">÷</div>
+						</div>
+						<div class="line">
+							<div class="element root ">√x</div>
+							<div class="element cubed ">x<sup>3<sup></div>
+							<div class="element cubicRoot ">∛x</div>
+							<div class="element number">7</div>
+							<div class="element number">8</div>
+							<div class="element number">9</div>
+							<div class="element mathOperator">×</div>
+						</div>
+						<div class="line">
+							<div class="element power ">x<sup>n<sup></div>
+							<div class="element natLog ">ln</div>
+							<div class="element decLog ">log<sub>10</sub></div>
+							<div class="element number">4</div>
+							<div class="element number">5</div>
+							<div class="element number">6</div>
+							<div class="element mathOperator">−</div>
+						</div>
+						<div class="line">
+							<div class="element factorial">n!</div>
+							<div class="element sin">sin</div>
+							<div class="element cos">cos</div>
+							<div class="element number">1</div>
+							<div class="element number">2</div>
+							<div class="element number">3</div>
+							<div class="element mathOperator">+</div>
+						</div>
+						<div class="line">
+							<div class="element tan">tan</div>
+							<div class="element e">e</div>
+							<div class="element PI">π</div>
+							<div class="element additiveInverse">+/-</div>
+							<div class="element number">0</div>
+							<div class="element dot">.</div>
+							<div class="element equals">=</div>
+						</div>
+					</div>
+				</div>
 
-
-						<div class="grid-factorial factorial  bla">n!</td></tr></table></div>
-						<div class="grid-sin sin bla">sin</td></tr></table></div>
-						<div class="grid-cos cos bla">cos</td></tr></table></div>
-						<div class="number grid-one bla">1</td></tr></table></div>
-						<div class="number grid-two bla">2</td></tr></table></div>
-						<div class="number grid-three bla">3</td></tr></table></div>
-						<div class="mathOperator grid-plus bla">+</td></tr></table></div>
-						
-						<div class="grid-tan tan bla">tan</td></tr></table></div>
-						<div class="grid-e e bla">e</td></tr></table></div>
-						<div class="grid-PI PI bla">π</td></tr></table></div>	
-						<div class="grid-additiveInverse additiveInverse bla">+/-</td></tr></table></div>
-						<div class="number grid-zero bla">0</td></tr></table></div>
-						<div class="grid-dot dot bla">.</td></tr></table></div>
-						<div class="grid-equals bla">=</td></tr></table></div>
-					</div>		
 			</div>
-			<div class="systemConverter calculator"></div>
-			<div class="converter calculator"></div>
 		</div>
-		<script src="script.js"></script>  -->
+		<script src="script.js"></script>
 	</body>
 </html>

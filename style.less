@@ -5,7 +5,7 @@
 }
 
 .test {
-	.size(100%, 90%);
+	.size(100%, 85%);
 }
 
 .marginPadding(@padding, @margin) {
@@ -22,13 +22,39 @@ html, body {
 	.size(100%, 100%);
 }
 
+.laptop {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background: #A64B00;
+}
+
 .container{
 	.size(100%, 100%);
 	background: black;
 }
 
+.menu {
+	color: white;
+	display: none;
+	background: green;
+	font-size: 30px;
+	margin-bottom: 1vh;
+}
+
+.menu div {
+	width: 50%;
+	text-align: center;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+}
+
+.menu div:first-child {
+	border-right: solid red 1.5px;
+}
+
 form {
-	.size(100%, 10%);
+	.size(100%, 15%);
 	display: flex;
 }
 
@@ -43,86 +69,18 @@ input {
 	padding-left: 5%;
 }
 
-label[for="menu"] {
-	position: absolute;
-	top: 1%;
-	left: 5%;
-	height: 8%;
-	background: #F2A30F;
-	border-radius: 50%;
-	opacity: 0.5;
-	z-index: 2; 	
-}
-
-#menu {
-	display: none;
-}
-
-.carpet {
-	display: none;
-	position: absolute;
-	background: #0742F2;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-	opacity: .8;
-	align-items: center;
-	justify-content: center;
-}
-
 ul {
 	list-style-type: none;
 	color: white;
 }
 
-#menu:checked ~ .carpet {
-	display: flex;
-}
-
-.field {
+.mode {
 	.size(100%, 100%);
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
 }
 
 .line {
 	display: flex;
 	justify-content: space-around;
-}
-
-#list span {
-	position: relative;
-}
-
-#list span:before {
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 0;
-	height: 1px;
-	background: red;
-	transition: width 1s;
-}
-
-#list #item1:checked ~ label[for="item1"] span:before,
-#list #item2:checked ~ label[for="item2"] span:before,
-#list #item3:checked ~ label[for="item3"] span:before {
-	width: 100%;
-}
-
-/* #list, #list * {
-	border: solid yellow 1px;
-}  */
-
-#list input {
-	display: none;
-}
-
-#list {
-	display: flex;
-	color: white;
 }
 
 .element {
@@ -134,6 +92,16 @@ ul {
 	color: white;
 }
 
+.orientation {
+	flex-direction: column;
+	.size(100%, 100%);
+	justify-content: space-around;
+}
+
+.active {
+	box-shadow: inset 0 -5px 2px -2px yellow;
+}
+
 @media screen and (orientation:portrait) {
 	body {
 		font-size: 5vh;
@@ -143,12 +111,6 @@ ul {
 	}
 	ul * {
 		margin: 1vh;
-	}
-	#list label:not([for="item1"]) {
-		margin-top: 5vw;
-	}
-	#list {
-		flex-direction: column;
 	}
 }
 
@@ -166,310 +128,4 @@ ul {
 		font-size: 7vh;
 		margin: 1vw;
 	}
-	#list label:not([for="item1"]) {
-		margin-left: 5vh;
-	}
 } 
-
-/*@media screen and (orientation:portrait) {
-	.portrait {
-		display: flex;
-	}
-	.landscape {
-		display: none;
-	}
-}
-
-@media screen and (orientation:landscape) {
-	.portrait {
-		display: none;
-	}
-	.landscape {
-		display: flex;
-	}
-}*/
-
-
-/*
-.Active {
-	display: flex;
-}*/
-
-/*
-@media screen and (orientation:landscape) and (max-device-width: 900px) {
-    html{
-        -webkit-transform: rotate(-90deg);
-           -moz-transform: rotate(-90deg);
-            -ms-transform: rotate(-90deg);
-             -o-transform: rotate(-90deg);
-                transform: rotate(-90deg);
-        -webkit-transform-origin: left top;
-           -moz-transform-origin: left top;
-            -ms-transform-origin: left top;
-             -o-transform-origin: left top;
-                transform-origin: left top;
-        position: absolute;
-        top: 100%;
-            left: 0
-    }
-}*/
-
-
-/*  * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-.marginPadding(@padding, @margin) {
-	padding: @padding,;
-	margin: @margin;
-}
-.size(@width, @height) {
-	width: @width;
-	height: @height;
-}
-nav {
-	display: flex;
-	background: #1DD300;
-	font-size: 1.2vw;
-	text-align: center;
-	position: relative;
-}
-nav div {
-	justify-content: center;
-	align-items: center;
-	display: flex;
-	cursor: pointer;
-	padding-top: 0.5vw;
-	padding-bottom: 0.5vw;
-}
-nav div:not(:last-child) {
-	border-right: 1px solid #033333;
-	vertical-align: middle;
-}
-.active {
-	box-shadow: inset 0 -8px 8px 0 yellow;
-}
-body {
-	.size(auto, 100%);
-	display: flex;
-	justify-content: center;
-	font-size: 2vw;
-	color: white;
-	background: #033333;
-}
-#container {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.standartContainer {
-	width: 24vw;
-}
-.extendedContainer {
-	width: 34vw;
-}
-.calculator {
-	display: none;
-}
-.standart,
-.extended {
-	height: 35vw;
-	margin-top: auto;
-	margin-bottom: auto;
-	flex-direction: column;
-	width: 100%;
-	background: black;
-}
-.activeCalc {
-	display: flex;
-}
-form {
-	.size(100%, 10%);
-	display: flex;
-}
-form input {
-	font-size: 3vw;
-	color: white;
-	padding: 1vw;
-	text-align: right;
-	outline: none;
-	border: none;
-	width: 100%;
-	background: black;
-}
-.standart .grid {
-	display: grid;
-	grid-template-areas: 
-		"one two three four"
-		"five six seven eight"
-		"nine ten eleven twelve"
-		"thirteen fourteen fifteen sixteen"
-		"seventeen eighteen nineteen twenty";
-	&-cancel {grid-area: one;}
-	&-delete {grid-area: two;}
-	&-percent {grid-area: three;}
-	&-divide {grid-area: four;}
-	&-seven {grid-area: five;}
-	&-eight {grid-area: six;}
-	&-nine {grid-area: seven;}
-	&-times {grid-area: eight;}
-	&-four {grid-area: nine;}
-	&-five {grid-area: ten;}
-	&-six {grid-area: eleven;}
-	&-minus {grid-area: twelve;}
-	&-one {grid-area: thirteen;}
-	&-two {grid-area: fourteen;}
-	&-three {grid-area: fifteen;}
-	&-plus {grid-area: sixteen;}
-	&-additiveInverse {grid-area: seventeen;}
-	&-zero {grid-area: eighteen;}
-	&-dot {grid-area: nineteen;}
-	&-equals {grid-area: twenty;}
-	grid-template-columns: repeat(4, 1fr);
-	grid-gap: 0.5vw;
-	grid-template-rows: repeat(5, auto);
-}
-.grid {
-	background: black;
-	flex-grow: 2;
-	.size(100%, 90%);
-}
-.grid div {
-	cursor: pointer;
-	position: relative;
-	box-sizing: border-box;
-	//border: solid red 1px;
-    display: flex;
-    justify-content: center;	
-}
-.grid div span {
-	display: inline-block;
-	background: green;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	vertical-align: middle;
-	line-height: 100%;
-}
-table {
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	background: #333333;
-	border-radius: 50%;
-}
-.extended .grid {
-	padding: 0.5vw;
-	display: grid;
-	grid-template-areas: 
-		"fraction powerDec squared one two three four"
-		"root cubed cubicRoot five six seven eight"
-		"power natLog decLog nine ten eleven twelve"
-		"factorial sin cos thirteen fourteen fifteen sixteen"
-		"tan e PI seventeen eighteen nineteen twenty";
-	&-fraction {grid-area: fraction;}
-	&-powerDec {grid-area: powerDec;}
-	&-squared {grid-area: squared;}
-	&-cancel {grid-area: one;}
-	&-Delete {grid-area: two;}
-	&-percent {grid-area: three;}
-	&-divide {grid-area: four;}
-	&-root {grid-area: root;}
-	&-cubed {grid-area: cubed;}
-	&-cubicRoot {grid-area: cubicRoot;}
-	&-seven {grid-area: five;}
-	&-eight {grid-area: six;}
-	&-nine {grid-area: seven;}
-	&-times {grid-area: eight;}
-	&-power {grid-area: power;}
-	&-natLog {grid-area: natLog;}
-	&-decLog {grid-area: decLog;}
-	&-four {grid-area: nine;}
-	&-five {grid-area: ten;}
-	&-six {grid-area: eleven;}
-	&-minus {grid-area: twelve;}
-	&-factorial {grid-area: factorial;}
-	&-sin {grid-area: sin;}
-	&-cos {grid-area: cos;}
-	&-one {grid-area: thirteen;}
-	&-two {grid-area: fourteen;}
-	&-three {grid-area: fifteen;}
-	&-plus {grid-area: sixteen;}
-	&-tan {grid-area: tan;}
-	&-e {grid-area: e;}
-	&-PI {grid-area: PI;}
-	&-additiveInverse {grid-area: seventeen;}
-	&-zero {grid-area: eighteen;}
-	&-dot {grid-area: nineteen;}
-	&-equals {grid-area: twenty;}
-	grid-template-columns: repeat(7, 1fr);
-	grid-gap: 0.5vw;
-	grid-template-rows: repeat(5, auto);
-}
-html {
-	.size(auto, 100%);
-}
-@media screen and (max-width: 1600px) {
-	.standartContainer {
-		width: 24vw;
-	}
-	.extendedContainer {
-		width: 44vw;
-	}
-	.standart {
-		height: 35vw;
-	}
-}
-@media screen and (max-width: 1200px) {
-	.standartContainer {
-		width: 30vw;
-	}
-	.extendedContainer {
-		width: 45vw;
-	}
-	.standart {
-		height: 41vw;
-	}
-}
-@media screen and (max-width: 800px) {
-	.standartContainer {
-		width: 36vw;
-	}
-	.extendedContainer {
-		width: 46vw;
-	}
-	.standart {
-		height: 47vw;
-	}
-}
-@media screen and (max-width: 500px) {
-	.standartContainer {
-		.size(100%, 100%);
-	}
-	.standart {
-		.size(100%, 100%);
-	}
-	.calculator .grid {
-		grid-gap: 10px;
-		padding: 1vw;
-	}
-	
-	nav {
-		display: none;
-	}
-	form input {
-		height: 100%;
-		font-size: 9vw;
-		padding-right: 5vw;
-	}
-	body {
-		font-size: 7vw;
-	}
-}
-@media screen and (min-width: 500px) {
-	nav div {
-		width: calc(100% / 4);
-	}
-}  */

@@ -1,72 +1,14 @@
-
+let body = document.querySelector('body');
+let nav = document.querySelector('.menu');
+let navMenu = document.querySelectorAll('.menuNav');
 let elements = document.querySelectorAll('.element');
 let container = document.querySelector('.container');
-
+let landscapes = document.querySelectorAll('.landscape');
+let portraites = document.querySelectorAll('.portrait');
 let test = document.querySelector('.test');
-let fields = document.querySelectorAll('.field');
+let modes = document.querySelectorAll('.mode');
 
-let degree;
-let label = document.querySelector('label');
 
-/* let links = document.querySelectorAll('a');
-let after = document.querySelectorAll('a:active:after'); */
-
-window.onload = function () {
-	degree = window.orientation;	
-	setOrientation();
-}
-
-/* for (let i = 0; i < links.length; i++) {
-	links[i].addEventListener('mousedown', function Animation() {
-		links[i].style.color = "red";
-	})
-}
-console.log(after[0]) */
-
-function setOrientation () {
-	let heightLabel = label.clientHeight;
-	label.style.width = heightLabel + 'px';
-
-	let heightTest = test.clientHeight;
-	let widthTest  = test.clientWidth;
-
-	if (!degree) {
-		for (let i = 0; i < fields.length; i++) {
-			fields[i].style.display = "none";
-		}
-		fields[0].style.display = "flex";
-
-		let width = Math.round(Math.min(heightTest, widthTest) / 5.5);
-		for (let i = 0; i < elements.length; i++) {
-			elements[i].style.width = width + 'px';
-		  	elements[i].style.height = width + 'px';
-		}
-		
-	} else {
-		for (let i = 0; i < fields.length; i++) {
-			fields[i].style.display = "none";
-		}
-		fields[1].style.display = "flex";
-		let height = Math.round(Math.min(heightTest, widthTest) / 6.5);
-	  	for (let i = 0; i < elements.length; i++) {
-			elements[i].style.width  = height + 'px';
-			elements[i].style.height = height + 'px';
-	  	}
-	}
-
-}
-
-window.addEventListener(`resize`, () => setTimeout(setOrientation, 50), false);
-
-window.addEventListener('orientationchange', function () {
-	degree = window.orientation;
-	setTimeout(setOrientation, 50);
-})
-
-let navDiv 			 = document.querySelector('nav');
-let nav  			 = document.querySelectorAll('.nav');
-let calculator 		 = document.querySelectorAll('.calculator');
-let table			 = document.querySelectorAll('table');
 let inputs 			 = document.querySelectorAll('input');
 let numbers 		 = document.querySelectorAll('.number');
 let mathOperator 	 = document.querySelectorAll('.mathOperator');
@@ -96,23 +38,134 @@ let number 			 = "";
 let percentActive 	 = true;
 let powerTrue		 = false;
 let numberPow;  
-/*
-if (document.documentElement.clientWidth < 500) {
-	container.className = 'standartContainer';
-}*/
-for (let i of nav) {
-	i.addEventListener("mousedown", () => pressNav(i));
+
+function setMode (item) {
+	for (let j = 0; j < modes.length; j++) {
+		modes[j].style.display = 'none';
+	}
+	modes[item].style.display = 'flex';
+	setOrientation();
 }
+
+window.onload = function() {
+	let bodyWidth = body.clientWidth;
+	let bodyHeight = body.clientHeight;
+	if (bodyWidth + bodyHeight > 1800) {
+		return setModeForLaptop();
+	}
+	setMode(0);
+	setOrientation();
+}
+
+function setOrientation() {
+	let heightTest = test.clientHeight;
+	let widthTest  = test.clientWidth;
+
+	if (body.clientWidth + body.clientHeight < 1800) {
+		nav.style.display = 'none';
+		body.classList.remove('laptop');
+		container.style.width = '100%';
+	} else {
+		return setModeForLaptop()
+	}
+
+	if (widthTest < heightTest) { // то есть в вертикальном виде
+		for (let i = 0; i < portraites.length; i++) {
+			landscapes[i].style.display = "none";
+			portraites[i].style.display = "flex";
+		}
+
+		let width = Math.round(Math.min(heightTest, widthTest) / 5.5);
+		for (let i = 0; i < elements.length; i++) {
+			elements[i].style.width = width + 'px';
+		  	elements[i].style.height = width + 'px';
+		}
+		
+	} else { // то есть в горизонтальном виде
+		for (let i = 0; i < landscapes.length; i++) {
+			portraites[i].style.display = 'none';
+			landscapes[i].style.display = 'flex'
+		}
+		let height = Math.round(Math.min(heightTest, widthTest) / 6.5);
+	  	for (let i = 0; i < elements.length; i++) {
+			elements[i].style.width  = height + 'px';
+			elements[i].style.height = height + 'px';
+	  	}
+	}
+}
+
+for (const i of navMenu) {
+	i.addEventListener("mousedown", function () { 
+		for (const i of navMenu) {
+			i.classList.remove('active');
+		}
+		i.classList.add('active');
+		setModeForLaptop();
+	});
+}
+
+function setModeForLaptop() {
+	container.style.width = '30vw';
+	body.classList.add('laptop');
+	nav.style.display = 'flex';
+	nav.style.width = '30vw';
+	body.style.fontSize = '3vh'
+
+	for (let i = 0; i < navMenu.length; i++) {
+		if (navMenu[i].classList.contains('active')) {
+			setOrientationForLaptop(navMenu[i].textContent);
+		}
+	}
+}
+
+function setOrientationForLaptop(item) {
+	let heightTest = test.clientHeight;
+	let widthTest  = test.clientWidth;
+
+	if (item == 'Standart') { // то есть в вертикальном виде
+		for (let i = 0; i < portraites.length; i++) {
+			landscapes[i].style.display = "none";
+			portraites[i].style.display = "flex";
+		}
+
+		let width = Math.round(Math.min(heightTest, widthTest) / 5.5);
+		for (let i = 0; i < elements.length; i++) {
+			elements[i].style.width = width + 'px';
+		  	elements[i].style.height = width + 'px';
+		}
+		
+	} else { // то есть в горизонтальном виде
+		container.style.width = '45vw';
+		for (let i = 0; i < landscapes.length; i++) {
+			portraites[i].style.display = 'none';
+			landscapes[i].style.display = 'flex'
+		}
+		let height = Math.round(Math.min(heightTest, widthTest) / 6.5);
+	  	for (let i = 0; i < elements.length; i++) {
+			elements[i].style.width  = height + 'px';
+			elements[i].style.height = height + 'px';
+	  	}
+	}
+}
+
+window.addEventListener(`resize`, () => setTimeout(setOrientation, 50), false);
+
+window.addEventListener('orientationchange', function () {
+	setTimeout(setOrientation, 50);
+})
+
 for (const i of numbers) {
 	i.addEventListener("mousedown", function (e) { 
 		pressNumbers(e.target.textContent)
 	});
 }
+
 for (const i of mathOperator) {
-	i.addEventListener('mousedown', function(e) {
-		pressOperations(e.target.textContent);
+	i.addEventListener('mousedown', function() {
+		pressOperations(i.textContent);
 	});
 }
+
 for (const i of equals) {
 	i.addEventListener('mousedown', pressEquals);
 }
@@ -152,7 +205,7 @@ function pressAdditiveInverses(arg) {
 	number = -1 * number;
 	Iterations(inputs, -1);
 }
-function pressNumbers(arg) {
+function pressNumbers(arg) {	
 	if (inputs[0].value == '0' || number == '') {
 		Iterations(inputs, '', true);
 	}
@@ -161,6 +214,7 @@ function pressNumbers(arg) {
 		number = inputs[0].value;
 	}
 }
+
 function pressOperations(arg) {
 	if (typeof array[array.length - 1] == "array") {
 	}
@@ -337,58 +391,3 @@ function Iterations(array, arg, assign) {
 		}
 	}
 }
-/*
-if (document.documentElement.clientWidth < 800) {
-	let timerId = setTimeout(function stick() {
-		container.style.height = document.documentElement.clientHeight;
-		timerId = setTimeout(stick, 1000);
-	}, 1000)
-}*/
-/*
-let grid = document.querySelectorAll('.grid'); // new
-window.addEventListener('orientationchange', function () {
-	if (window.orientation > 0 || window.orientation < 0) {
-		navDiv.style.display = 'none';
-		calculator[1].style.margin = '0';
-		container.style.width = '100%';
-		calculator[1].style.height = '100%';
-		calculator[1].style.width = '100%';
-		//let height = bla[0].clientHeight / 1.6;
-		for (let i = 0; i < calculator.length; i++) {
-			calculator[i].classList.remove('activeCalc');
-		}
-		calculator[1].classList.add('activeCalc');
-		let heightGrid = Math.round(grid[1].clientHeight / 10); // new
-		console.log(heightGrid)	
-		for (let i = 20; i < bla.length; i++) {
-			bla[i].style.paddingTop = '0';
-			bla[i].style.paddingBottom = '0';
-		}
-		//let lmmomo = table[20].clientHeight;
-		for (let i = 20; i < table.length; i++) {
-			table[i].style.height = heightGrid + 'px';
-			table[i].style.width = heightGrid + 'px';
-		}
-	} else {
-		calculator[1].classList.remove('activeCalc');
-		calculator[0].classList.add('activeCalc');	
-	}
-})*/
-
-/*
-function pressNav(arg) {
-	for (let i = 0; i < nav.length; i++) {
-		nav[i].classList.remove('active');
-		calculator[i].classList.remove('activeCalc');
-	}
-	let id = [...nav].indexOf(arg);
-	calculator[id].classList.add('activeCalc');
-	arg.classList.add('active');
-	if (id == 1) {
-		container.className = 'extendedContainer';
-		navDiv.style.width = 24 + "vw";
-	} else if (id == 0) {
-		container.className = 'standartContainer';
-		navDiv.style.width = 24 + "vw";
-	}
-}*/
