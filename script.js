@@ -5,7 +5,7 @@ let elements = document.querySelectorAll('.element');
 let container = document.querySelector('.container');
 let landscapes = document.querySelectorAll('.landscape');
 let portraites = document.querySelectorAll('.portrait');
-let test = document.querySelector('.test');
+let field = document.querySelector('.field');
 let modes = document.querySelectorAll('.mode');
 
 
@@ -58,8 +58,8 @@ window.onload = function() {
 }
 
 function setOrientation() {
-	let heightTest = test.clientHeight;
-	let widthTest  = test.clientWidth;
+	let heightField = field.clientHeight;
+	let widthField  = field.clientWidth;
 
 	if (body.clientWidth + body.clientHeight < 1800) {
 		nav.style.display = 'none';
@@ -69,30 +69,31 @@ function setOrientation() {
 		return setModeForLaptop()
 	}
 
-	if (widthTest < heightTest) { // то есть в вертикальном виде
+	if (widthField < heightField) {
 		for (let i = 0; i < portraites.length; i++) {
 			landscapes[i].style.display = "none";
 			portraites[i].style.display = "flex";
 		}
 
-		let width = Math.round(Math.min(heightTest, widthTest) / 5.5);
-		for (let i = 0; i < elements.length; i++) {
-			elements[i].style.width = width + 'px';
-		  	elements[i].style.height = width + 'px';
-		}
+		let width = Math.round(Math.min(heightField, widthField) / 5.5);
+		setElementsSize(width);
 		
-	} else { // то есть в горизонтальном виде
+	} else {
 		for (let i = 0; i < landscapes.length; i++) {
 			portraites[i].style.display = 'none';
 			landscapes[i].style.display = 'flex'
 		}
-		let height = Math.round(Math.min(heightTest, widthTest) / 6.5);
-	  	for (let i = 0; i < elements.length; i++) {
-			elements[i].style.width  = height + 'px';
-			elements[i].style.height = height + 'px';
-	  	}
+		let height = Math.round(Math.min(heightField, widthField) / 6.5);
+		setElementsSize(height);
 	}
-}
+} 
+
+function setElementsSize(value) {
+	for (let i = 0; i < elements.length; i++) {
+		elements[i].style.width  = value + 'px';
+		elements[i].style.height = value + 'px';
+	}
+} 
 
 for (const i of navMenu) {
 	i.addEventListener("mousedown", function () { 
@@ -119,34 +120,27 @@ function setModeForLaptop() {
 }
 
 function setOrientationForLaptop(item) {
-	let heightTest = test.clientHeight;
-	let widthTest  = test.clientWidth;
+	let heightField = field.clientHeight;
+	let widthField  = field.clientWidth;
 
-	if (item == 'Standart') { // то есть в вертикальном виде
+	if (item == 'Standart') {
 		for (let i = 0; i < portraites.length; i++) {
 			landscapes[i].style.display = "none";
 			portraites[i].style.display = "flex";
 		}
-
-		let width = Math.round(Math.min(heightTest, widthTest) / 5.5);
-		for (let i = 0; i < elements.length; i++) {
-			elements[i].style.width = width + 'px';
-		  	elements[i].style.height = width + 'px';
-		}
+		let width = Math.round(Math.min(heightField, widthField) / 5.5);
+		setElementsSize(width);
 		
-	} else { // то есть в горизонтальном виде
+	} else {
 		container.style.width = '45vw';
 		for (let i = 0; i < landscapes.length; i++) {
 			portraites[i].style.display = 'none';
 			landscapes[i].style.display = 'flex'
 		}
-		let height = Math.round(Math.min(heightTest, widthTest) / 6.5);
-	  	for (let i = 0; i < elements.length; i++) {
-			elements[i].style.width  = height + 'px';
-			elements[i].style.height = height + 'px';
-	  	}
+		let height = Math.round(Math.min(heightField, widthField) / 6.5);
+		setElementsSize(height);
 	}
-}
+} 
 
 window.addEventListener(`resize`, () => setTimeout(setOrientation, 50), false);
 
@@ -155,20 +149,17 @@ window.addEventListener('orientationchange', function () {
 })
 
 for (const i of numbers) {
-	i.addEventListener("mousedown", function (e) { 
-		pressNumbers(e.target.textContent)
-	});
+	i.addEventListener("mousedown", () => pressNumbers(i.textContent));
 }
 
 for (const i of mathOperator) {
-	i.addEventListener('mousedown', function() {
-		pressOperations(i.textContent);
-	});
+	i.addEventListener('mousedown', () => pressOperations(i.textContent));
 }
 
 for (const i of equals) {
 	i.addEventListener('mousedown', pressEquals);
-}
+} 
+
 for (const i of cancels) {
 	i.addEventListener('mousedown', pressCancel);
 }
@@ -267,6 +258,7 @@ function pressEquals() {
 	if (powerTrue) {
 		count = powFunct();
 	}
+
 	array.push(number);
 	for (let i = 0; i < array.length - 1;) {
 		if (array[i + 1] == "×") {
@@ -279,6 +271,7 @@ function pressEquals() {
 			i+=2;
 		}
 	}
+
 	for (let j = 0; j < array.length - 1;) {
 		if (array[j + 1] == "+") {
 			count = +array[j] + +array[j + 2];
@@ -291,6 +284,7 @@ function pressEquals() {
 			j+=2;
 		}
 	}
+
 	number = (+count).toPrecision(8);
 	roundNumber();
 	array = [];
