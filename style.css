@@ -76,9 +76,11 @@ ul {
 }
 .mathOperator {
   background: #FF7F00;
+  font-weight: 900;
 }
 .equals {
   background: #FF6A00;
+  font-weight: 900;
 }
 .orientation {
   flex-direction: column;
