@@ -123,7 +123,7 @@ function setOrientationForLaptop(item) {
 	let heightField = field.clientHeight;
 	let widthField  = field.clientWidth;
 
-	if (item == 'Standart') {
+	if (item == 'Standard') {
 		for (let i = 0; i < portraites.length; i++) {
 			landscapes[i].style.display = "none";
 			portraites[i].style.display = "flex";

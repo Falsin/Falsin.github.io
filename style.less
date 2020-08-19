@@ -37,7 +37,7 @@ html, body {
 .menu {
 	color: white;
 	display: none;
-	background: green;
+	background: hsl(120, 100%, 25%);
 	font-size: 30px;
 	margin-bottom: 1vh;
 }
@@ -93,12 +93,12 @@ ul {
 }
 
 .mathOperator {
-	background: #FF7F00;
+	background: hsl(30, 100%, 50%);
 	font-weight: 900;
 }
 
 .equals {
-	background: #FF6A00;
+	background: hsl(25, 100%, 50%);
 	font-weight: 900;
 }
 
@@ -109,12 +109,37 @@ ul {
 }
 
 .service {
-	background: hsl(0, 0, 35%);
+	background: hsl(0, 0%, 35%);
 }
 
 .active {
 	box-shadow: inset 0 -5px 2px -2px yellow;
 }
+
+.element:hover {
+	background: lighten(hsl(0, 0, 20%), 15%);
+}
+
+.service:hover {
+	background: lighten(hsl(0, 0, 35%), 15%);
+}
+
+.mathOperator:hover {
+	background: lighten(hsl(30, 100%, 50%), 15%);
+}
+
+.equals:hover {
+	background: lighten(hsl(25, 100%, 50%), 15%);
+}
+
+.menuNav:hover {
+	background: lighten(hsl(120, 100%, 25%), 15%);
+}
+
+.element:active {
+	box-shadow: inset 0 0 3px 3px hsl(0, 0%, 20%);
+}
+
 
 @media screen and (orientation:portrait) {
 	body {
